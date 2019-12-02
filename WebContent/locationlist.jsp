@@ -1,13 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
 <html lang="zxx">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>travel</title>
-    <link rel="icon" href="./img/favicon.png">
+    <link rel="icon" href="img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- animate CSS -->
@@ -27,6 +28,7 @@
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <!--::header part start::-->
     <header class="main_menu home_menu">
@@ -46,16 +48,11 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="index.jsp">Home</a>
                                 </li>
-                           
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="packages.jsp" id="navbarDropdown"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Drive Course
-                                    </a>
-                                    <div class="dropdown-menu" aria-laballedby="navbarDropdown">
-                                        <a class="dropdown-item" href="themelist.jsp">Theme</a>
-                                        <a class="dropdown-item" href="locationlist.jsp">Location</a>
-                                    </div>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about.jsp">about</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="packages.jsp">packages</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.jsp" id="navbarDropdown"
@@ -67,6 +64,18 @@
                                         <a class="dropdown-item" href="single-blog.jsp">Single blog</a>
                                     </div>
                                 </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="blog.jsp" id="navbarDropdown1"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        pages
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                                        <a class="dropdown-item" href="elements.jsp">Elements</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.jsp">Contact</a>
+                                </li>
                             </ul>
                         </div>
                         <a class="btn_1 d-none d-lg-block" href="#">Hot Line 052</a>
@@ -77,100 +86,23 @@
     </header>
     <!-- Header part end-->
 
-    <!-- banner part start-->
-    <section class="banner_part">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <div class="banner_text">
-                        <div class="banner_text_iner">
-                            <h5>Best way to Drive</h5>
-                            <h1>Drive For Everybody</h1>
-                            <h2 style="color:white">모두의 드라이브</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- banner part start-->
+	<!-- breadcrumb start-->
+	<section class="breadcrumb breadcrumb_bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="breadcrumb_iner text-center">
+						<div class="breadcrumb_iner_item">
+							<h2>about us</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+    <!-- breadcrumb start-->
 
-    <!-- banner part start-->
-    <section class="search_your_country">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <div class="search_form">
-                        <form action="#">
-                            <div class="form-row">
-                                <div class="col-md-9">
-                                    <div class="search_form_iner">
-										<select class="custom_select" id="inlineFormCustomSelect">
-                                            <option selected>지역</option>
-                                            <option value="1">서울특별시</option>
-                                            <option value="2">경기도</option>
-                                            <option value="3">대전광역시</option>
-                                            <option value="4">대구광역시</option>
-                                            <option value="5">광주광역시</option>
-                                            <option value="6">부산광역시</option>
-                                            <option value="7">인천광역시</option>
-                                            <option value="8">울산광역시</option>
-                                            <option value="9">강원도</option>
-                                            <option value="10">충청북도</option>
-                                            <option value="11">충청남도</option>
-                                            <option value="12">경상북도</option>
-                                            <option value="13">경상남도</option>
-                                            <option value="14">전라북도</option>
-                                            <option value="15">전라남도</option>
-                                            <option value="16">세종특별자치시</option>
-                                            <option value="17">제주도</option>
-                                        </select>
-                                        <input type="text" name="first_name" placeholder="First Name"
-                                        onfocus="this.placeholder = ''" onblur="this.placeholder = '검색어를 입력하세요 !!'" required
-                                        class="single-input">
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <a href="#" class="search_btn">search</a>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_donation_item">
-                        <img src="img/icon/money_bag.svg" alt="#">
-                        <h4>고객 맞춤형 검색의 편리함</h4>
-                        <p>나만의 드라이브 코스를 알고 싶을 때, 테마별/지역별로 검색해보세요 ! 즉시 드라이브 코스를 추천해드립니다. </p>
-                        <a href="#" class="read_btn">read more</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_donation_item">
-                        <img src="img/icon/money_bag.svg" alt="#">
-                        <h4>테마별/지역별 드라이브 코스 추천</h4>
-                        <p>선호하는 테마별 드라이브 코스를 지역별로 검색해보세요! 단순한 드라이브가 아닌 새로운 드라이브 경험이 될거에요!</p>
-                        <a href="#" class="read_btn">read more</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_donation_item">
-                        <img src="img/icon/money_bag.svg" alt="#">
-                        <h4>드라이브 코스 평가와 공유의 가치</h4>
-                        <p>사용자 간 '나만의 드라이브 코스'를 공유해보세요! 그리고 다양한 코스를 평가해보세요! </p>
-                        <a href="#" class="read_btn">read more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <img src="img/animate_icon/Shape-1.png" alt="" class="feature_icon_1">
-        <img src="img/animate_icon/Shape-2.png" alt="" class="feature_icon_2">
-    </section>
-    <!-- banner part start-->
-
-    <!-- feature_part start-->
+    <!-- feature part start-->
     <section class="feature_part padding_top">
         <div class="container">
             <div class="row align-items-center justify-content-between">
@@ -216,14 +148,13 @@
                 </div>
             </div>
         </div>
-
         <img src="img/animate_icon/Shape-1.png" alt="" class="feature_icon_1">
         <img src="img/animate_icon/Shape-2.png" alt="" class="feature_icon_2">
         <img src="img/animate_icon/Shape-3.png" alt="" class="feature_icon_3">
     </section>
-    <!-- upcoming_event part start-->
+    <!-- feature part end-->
 
-    <!-- use sasu part end-->
+    <!-- popular place part start-->
     <section class="popular_place padding_top">
         <div class="container">
             <div class="row justify-content-center">
@@ -262,161 +193,9 @@
             </div>
         </div>
     </section>
-    <!-- use sasu part end-->
+    <!-- popular place part end-->
 
-    <!-- about_us part start-->
-    <section class="place_details section_padding">
-        <div class="container-fluid">
-            <div class="row justify-content-between">
-                <div class="col-md-6 col-lg-6">
-                    <div class="place_detauls_text">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-xl-6">
-                                <div class="place_details_content">
-                                    <img src="img/section_tittle_img.png" alt="#">
-                                    <h2>Amazing tour</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
-                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-                                        ipsum suspendisse ultrices gravida Risus commodo viverra maecenas
-                                        accumsan lacus vel facilisis. </p>
-                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt
-                                    ut</span>
-                                </div>
-                            </div>
-                        </div>
-                        <img src="img/plase_details_1.png" alt="#">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="place_details_img">
-                        <img src="img/plase_details_2.png" alt="#">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="view_all_btn">
-            <a href="#" class="view_btn">view all</a>
-        </div>
-    </section>
-    <!-- about_us part end-->
-
-    <!-- pricing part start-->
-    <section class="tour_package section_padding">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-sm-6">
-                    <div class="tour_package_cotent owl-carousel">
-                        <div class="single_tour_package">
-                            <img src="img/tour_plan_1.png" alt="">
-                            <div class="tour_pack_content">
-                                <h4>Sawpalo, Brasil</h4>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipi
-                                    elit sed do eiusmod tempor incididunt</p>
-                                <div class="tour_content_rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                    </ul>
-                                    <a href="#" class="btn1">join now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_tour_package">
-                            <img src="img/tour_plan_2.png" alt="">
-                            <div class="tour_pack_content">
-                                <h4>Sawpalo, Brasil</h4>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipi
-                                    elit sed do eiusmod tempor incididunt</p>
-                                <div class="tour_content_rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                    </ul>
-                                    <a href="#" class="btn1">join now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_tour_package">
-                            <img src="img/tour_plan_1.png" alt="">
-                            <div class="tour_pack_content">
-                                <h4>Sawpalo, Brasil</h4>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipi
-                                    elit sed do eiusmod tempor incididunt</p>
-                                <div class="tour_content_rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                    </ul>
-                                    <a href="#" class="btn1">join now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_tour_package">
-                            <img src="img/tour_plan_2.png" alt="">
-                            <div class="tour_pack_content">
-                                <h4>Sawpalo, Brasil</h4>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipi
-                                    elit sed do eiusmod tempor incididunt</p>
-                                <div class="tour_content_rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                    </ul>
-                                    <a href="#" class="btn1">join now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-xl-3 offset-lg-1 col-sm-6">
-                    <div class="tour_pack_content">
-                        <img src="img/section_tittle_img.png" alt="">
-                        <h2>tour package</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit 
-                        sed  do eiusmod tempor incididunt ut</p>
-                        <a href="#" class="btn_1">join now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- pricing part end-->
-
-    <!-- cta part start-->
-    <section class="cta_part section_padding">
-        <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-8 col-xl-7">
-                    <div class="cta_text text-center">
-                        <h5>Join Our Newsletter</h5>
-                        <h2>Subscribe to get Updated
-                                with new offers</h2>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Enter email address" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
-                            <div class="input-group-append" id="button-addon4">
-                                <a href="#" class="subs_btn">subscribe now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- cta part end-->
-
-    <!-- blog part start-->
+    <!-- blog post part start-->
     <section class="blog_part padding_top">
         <div class="container">
             <div class="row">
@@ -509,16 +288,16 @@
         </div>
         <img src="img/overlay_1.png" alt="#" class="blog_img">
     </section>
-    <!-- blog part end-->
+    <!-- blog post part end-->
 
-    <!--::footer_part start::-->
+	<!--::footer_part start::-->
     <footer class="footer_part">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-lg-3">
                     <div class="single_footer_part">
                         <h4>About Agency</h4>
-                        <p>The world has become so fast paced that people don’t want 
+                        <p>The world has become so fast paced that people don��t want 
                         to stand by reading a page of information, they would much 
                         rather look at a presentation and understand the message. 
                         It has come to a point where images</p>
@@ -610,6 +389,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/bootstrap.min.js"></script>
     <!-- easing js -->
     <script src="js/jquery.magnific-popup.js"></script>
+    
+    
+    
+    
     <!-- particles js -->
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
