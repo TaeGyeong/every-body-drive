@@ -112,23 +112,33 @@
                         <img src="img/theme/sakura.png" alt="">
                         <h4>봄</h4>
                         <p>Spring</p>
-                        <a href="#" class="btn1">book now</a>
+                        <a href="#" class="btn1">read more</a>
                     </div>
-                </div><div class="col-lg-4 col-sm-6">
+                </div>
+                <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/theme/ice-cream.png" alt="">
                         <h4>여름</h4>
                         <p>Summer</p>
-                        <a href="#" class="btn1">book now</a>
+                        <a href="#" class="btn1">read more</a>
                     </div>
-                </div><div class="col-lg-4 col-sm-6">
+                </div>
+                <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/theme/dry-leaf.png" alt="">
                         <h4>가을</h4>
                         <p>Fall</p>
-                        <a href="#" class="btn1">book now</a>
+                        <a href="#" class="btn1">read more</a>
                     </div>
                 </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/theme/igloo.png" alt="">
+                        <h4>겨울</h4>
+                        <p>winter</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>          
             </div>
         </div>
     </section>
