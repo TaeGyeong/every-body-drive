@@ -92,7 +92,8 @@
                     <div class="banner_text">
                         <div class="banner_text_iner">
                             <h5>Best way to tour</h5>
-                            <h1>Lorem ipsum dolor amet consec</h1>
+                            <h1>Drive For Everybody</h1>
+                            <h2 style="color:white">모두의 드라이브</h2>
                         </div>
                     </div>
                 </div>
@@ -109,23 +110,36 @@
                     <div class="search_form">
                         <form action="#">
                             <div class="form-row">
-                                <div class="col-lg-9">
+                                <div class="col-md-3">
                                     <div class="search_form_iner">
                                         <select class="custom_select" id="inlineFormCustomSelect">
-                                            <option selected>country</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                        <select class="custom_select" id="inlineFormCustomSelect1">
-                                            <option selected>city</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                            <option selected>지역</option>
+                                            <option value="1">서울특별시</option>
+                                            <option value="2">경기도</option>
+                                            <option value="3">대전광역시</option>
+                                            <option value="4">대구광역시</option>
+                                            <option value="5">광주광역시</option>
+                                            <option value="6">부산광역시</option>
+                                            <option value="7">인천광역시</option>
+                                            <option value="8">울산광역시</option>
+                                            <option value="9">강원도</option>
+                                            <option value="10">충청북도</option>
+                                            <option value="11">충청남도</option>
+                                            <option value="12">경상북도</option>
+                                            <option value="13">경상남도</option>
+                                            <option value="14">전라북도</option>
+                                            <option value="15">전라남도</option>
+                                            <option value="16">세종특별자치시</option>
+                                            <option value="17">제주도</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-md-6">
+                                    <input type="text" name="first_name" placeholder="First Name"
+                                        onfocus="this.placeholder = ''" onblur="this.placeholder = '검색어를 입력하세요 !!'" required
+                                        class="single-input">
+                                </div>
+                                <div class="col-md-3">
                                     <a href="#" class="search_btn">search</a>
                                 </div>
                             </div>
