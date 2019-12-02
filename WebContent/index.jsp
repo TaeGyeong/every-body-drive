@@ -47,8 +47,15 @@
                                     <a class="nav-link" href="index.jsp">Home</a>
                                 </li>
                            
-                                <li class="nav-item">
-                                    <a class="nav-link" href="packages.jsp">Drive Course</a>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="packages.jsp" id="navbarDropdown"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Drive Course
+                                    </a>
+                                    <div class="dropdown-menu" aria-laballedby="navbarDropdown">
+                                        <a class="dropdown-item" href="themelist.jsp">Theme</a>
+                                        <a class="dropdown-item" href="locationlist.jsp">Location</a>
+                                    </div>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.jsp" id="navbarDropdown"
@@ -60,8 +67,6 @@
                                         <a class="dropdown-item" href="single-blog.jsp">Single blog</a>
                                     </div>
                                 </li>
-                          
-                               
                             </ul>
                         </div>
                         <a class="btn_1 d-none d-lg-block" href="#">Hot Line 052</a>
@@ -98,9 +103,9 @@
                     <div class="search_form">
                         <form action="#">
                             <div class="form-row">
-                                <div class="col-md-3">
+                                <div class="col-md-9">
                                     <div class="search_form_iner">
-                                        <select class="custom_select" id="inlineFormCustomSelect">
+										<select class="custom_select" id="inlineFormCustomSelect">
                                             <option selected>지역</option>
                                             <option value="1">서울특별시</option>
                                             <option value="2">경기도</option>
@@ -120,12 +125,10 @@
                                             <option value="16">세종특별자치시</option>
                                             <option value="17">제주도</option>
                                         </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" name="first_name" placeholder="First Name"
+                                        <input type="text" name="first_name" placeholder="First Name"
                                         onfocus="this.placeholder = ''" onblur="this.placeholder = '검색어를 입력하세요 !!'" required
                                         class="single-input">
+                                    </div>
                                 </div>
                                 <div class="col-md-3">
                                     <a href="#" class="search_btn">search</a>
