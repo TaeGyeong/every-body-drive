@@ -110,9 +110,9 @@
                     <div class="search_form">
                         <form action="#">
                             <div class="form-row">
-                                <div class="col-md-3">
+                                <div class="col-md-9">
                                     <div class="search_form_iner">
-                                        <select class="custom_select" id="inlineFormCustomSelect">
+										<select class="custom_select" id="inlineFormCustomSelect">
                                             <option selected>지역</option>
                                             <option value="1">서울특별시</option>
                                             <option value="2">경기도</option>
@@ -132,12 +132,10 @@
                                             <option value="16">세종특별자치시</option>
                                             <option value="17">제주도</option>
                                         </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" name="first_name" placeholder="First Name"
+                                        <input type="text" name="first_name" placeholder="First Name"
                                         onfocus="this.placeholder = ''" onblur="this.placeholder = '검색어를 입력하세요 !!'" required
                                         class="single-input">
+                                    </div>
                                 </div>
                                 <div class="col-md-3">
                                     <a href="#" class="search_btn">search</a>
