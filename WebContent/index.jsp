@@ -179,33 +179,29 @@
                 <div class="col-lg-5">
                     <div class="feature_part_text">
                         <img src="img/section_tittle_img.png" alt="#">
-                        <h2>Amazing tour</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-                            ipsum suspendisse ultrices gravida Risus commodo viverra maecenas
-                            accumsan lacus vel facilisis. </p>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt
-                            ut</span>
+                        <h2>Let's Drive for You !</h2>
+                        <p>자동차는 있지만 어디로 드라이브를 가야할지 모르는 고객에게 맞춤형 드라이브 코스를 추천합니다! 드라이브 코스를 일일이 검색하는 것이 번거로웠던 만큼, 모두의 드라이브 서비스는 검색의 자유로움과 편리함을 제공할 수 있습니다.</p>
+                        <span>Enjoy Your Drive course!</span>
                         <div class="row">
                             <div class="col-sm-6 col-md-4">
                                 <div class="feature_part_text_iner">
                                     <img src="img/icon/tour_icon_1.png" alt="">
-                                    <h4>london</h4>
-                                    <p>35 Places</p>
+                                    <h4>Theme</h4>
+                                    <p>530 Places</p>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-4">
                                 <div class="feature_part_text_iner">
                                     <img src="img/icon/tour_icon_2.png" alt="">
-                                    <h4>Kashmir</h4>
-                                    <p>75 Places</p>
+                                    <h4>Location</h4>
+                                    <p>530 Places</p>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-4">
                                 <div class="feature_part_text_iner">
                                     <img src="img/icon/tour_icon_3.png" alt="">
-                                    <h4>chaina</h4>
-                                    <p>85 Places</p>
+                                    <h4>Shared</h4>
+                                    <p>130 Places</p>
                                 </div>
                             </div>
                         </div>
@@ -227,9 +223,8 @@
                 <div class="col-lg-5">
                     <div class="section_tittle text-center">
                         <img src="img/section_tittle_img.png" alt="">
-                        <h2>Most Popular <span>place</span> </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit 
-                        sed  do eiusmod tempor incididunt ut</p>
+                        <h2>Most Popular <span>Drive Course</span> </h2>
+                        <p>맞춤형 드라이브 코스로 새로운 여정을 떠나보세요! 당신의 삶에 새로운 가치가 더해질거에요! </p>
                     </div>
                 </div>
             </div>
@@ -237,23 +232,23 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/icon/place_icon_1.png" alt="">
-                        <h4>Life of Egeft</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor</p>
-                        <a href="#" class="btn1">book now</a>
+                        <h4>엄태경</h4>
+                        <p>Ajou University, Developer</p>
+                        <a href="#" class="btn1">More Info</a>
                     </div>
                 </div><div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/icon/place_icon_2.png" alt="">
-                        <h4>Biking in Norway</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor</p>
-                        <a href="#" class="btn1">book now</a>
+                        <h4>정주현</h4>
+                        <p>Ajou University, Developer</p>
+                        <a href="#" class="btn1">More Info</a>
                     </div>
                 </div><div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/icon/place_icon_3.png" alt="">
-                        <h4>Tour of iceland</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor</p>
-                        <a href="#" class="btn1">book now</a>
+                        <h4>박창현</h4>
+                        <p>Ajou University, Developer</p>
+                        <a href="#" class="btn1">More Info</a>
                     </div>
                 </div>
             </div>
