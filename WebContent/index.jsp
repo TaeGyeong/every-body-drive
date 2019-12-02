@@ -46,11 +46,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="index.jsp">Home</a>
                                 </li>
+                           
                                 <li class="nav-item">
-                                    <a class="nav-link" href="about.jsp">about</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="packages.jsp">packages</a>
+                                    <a class="nav-link" href="packages.jsp">Drive Course</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.jsp" id="navbarDropdown"
@@ -62,18 +60,8 @@
                                         <a class="dropdown-item" href="single-blog.jsp">Single blog</a>
                                     </div>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.jsp" id="navbarDropdown1"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        pages
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                                        <a class="dropdown-item" href="elements.jsp">Elements</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact.jsp">Contact</a>
-                                </li>
+                          
+                               
                             </ul>
                         </div>
                         <a class="btn_1 d-none d-lg-block" href="#">Hot Line 052</a>
@@ -91,7 +79,7 @@
                 <div class="col-lg-7">
                     <div class="banner_text">
                         <div class="banner_text_iner">
-                            <h5>Best way to tour</h5>
+                            <h5>Best way to Drive</h5>
                             <h1>Drive For Everybody</h1>
                             <h2 style="color:white">모두의 드라이브</h2>
                         </div>
@@ -149,30 +137,24 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_donation_item">
                         <img src="img/icon/money_bag.svg" alt="#">
-                        <h4>donation</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing 
-                        elit sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna </p>
+                        <h4>고객 맞춤형 검색의 편리함</h4>
+                        <p>나만의 드라이브 코스를 알고 싶을 때, 테마별/지역별로 검색해보세요 ! 즉시 드라이브 코스를 추천해드립니다. </p>
                         <a href="#" class="read_btn">read more</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_donation_item">
                         <img src="img/icon/money_bag.svg" alt="#">
-                        <h4>donation</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing 
-                        elit sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna </p>
+                        <h4>테마별/지역별 드라이브 코스 추천</h4>
+                        <p>선호하는 테마별 드라이브 코스를 지역별로 검색해보세요! 단순한 드라이브가 아닌 새로운 드라이브 경험이 될거에요!</p>
                         <a href="#" class="read_btn">read more</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_donation_item">
                         <img src="img/icon/money_bag.svg" alt="#">
-                        <h4>donation</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing 
-                        elit sed do eiusmod tempor incididunt ut labore et 
-                        dolore magna </p>
+                        <h4>드라이브 코스 평가와 공유의 가치</h4>
+                        <p>사용자 간 '나만의 드라이브 코스'를 공유해보세요! 그리고 다양한 코스를 평가해보세요! </p>
                         <a href="#" class="read_btn">read more</a>
                     </div>
                 </div>
