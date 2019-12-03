@@ -125,8 +125,8 @@
                                             <option value="16">세종특별자치시</option>
                                             <option value="17">제주도</option>
                                         </select>
-                                        <input type="text" name="first_name" placeholder="First Name"
-                                        onfocus="this.placeholder = ''" onblur="this.placeholder = '검색어를 입력하세요 !!'" required
+                                        <input type="text" name="first_name" placeholder="검색어를 입력하세요."
+                                        onfocus="this.placeholder = ''" onblur="this.placeholder = '검색어를 입력하세요.'" required
                                         class="single-input">
                                     </div>
                                 </div>

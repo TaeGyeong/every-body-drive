@@ -138,7 +138,111 @@
                         <p>winter</p>
                         <a href="#" class="btn1">read more</a>
                     </div>
-                </div>          
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/theme/park.png" alt="">
+                        <h4>공원</h4>
+                        <p>park</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/theme/couple.png" alt="">
+                        <h4>데이트</h4>
+                        <p>date drive</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/theme/24-hours.png" alt="">
+                        <h4>당일치기</h4>
+                        <p>one day trip</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/theme/camera.png" alt="">
+                        <h4>카메라</h4>
+                        <p>camera</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/theme/calm.png" alt="">
+                        <h4>바다 & 호수</h4>
+                        <p>sea & lake</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/theme/mountain.png" alt="">
+                        <h4>산악</h4>
+                        <p>Mountain</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/theme/stars.png" alt="">
+                        <h4>새벽</h4>
+                        <p>dawn</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/theme/moon.png" alt="">
+                        <h4>야간</h4>
+                        <p>night</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/theme/sunrise.png" alt="">
+                        <h4>일출 & 일몰</h4>
+                        <p>sunrise & sunset</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/theme/luggage.png" alt="">
+                        <h4>주말</h4>
+                        <p>weekend</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/theme/driving.png" alt="">
+                        <h4>초보</h4>
+                        <p>beginner</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/theme/cafe.png" alt="">
+                        <h4>카페</h4>
+                        <p>cafe</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/theme/driver.png" alt="">
+                        <h4>혼자</h4>
+                        <p>by oneself</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>        
             </div>
         </div>
     </section>
