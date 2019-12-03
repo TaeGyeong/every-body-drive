@@ -48,11 +48,16 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="index.jsp">Home</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="about.jsp">about</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="packages.jsp">packages</a>
+                           
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="packages.jsp" id="navbarDropdown"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Drive Course
+                                    </a>
+                                    <div class="dropdown-menu" aria-laballedby="navbarDropdown">
+                                        <a class="dropdown-item" href="themelist.jsp">Theme</a>
+                                        <a class="dropdown-item" href="locationlist.jsp">Location</a>
+                                    </div>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.jsp" id="navbarDropdown"
@@ -64,18 +69,6 @@
                                         <a class="dropdown-item" href="single-blog.jsp">Single blog</a>
                                     </div>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.jsp" id="navbarDropdown1"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        pages
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                                        <a class="dropdown-item" href="elements.jsp">Elements</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact.jsp">Contact</a>
-                                </li>
                             </ul>
                         </div>
                         <a class="btn_1 d-none d-lg-block" href="#">Hot Line 052</a>
@@ -85,15 +78,15 @@
         </div>
     </header>
     <!-- Header part end-->
-
-	<!-- breadcrumb start-->
+    
+    <!-- breadcrumb start-->
 	<section class="breadcrumb breadcrumb_bg">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="breadcrumb_iner text-center">
 						<div class="breadcrumb_iner_item">
-							<h2>about us</h2>
+							<h2>지역으로 코스찾기</h2>
 						</div>
 					</div>
 				</div>
@@ -102,58 +95,6 @@
 	</section>
     <!-- breadcrumb start-->
 
-    <!-- feature part start-->
-    <section class="feature_part padding_top">
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-lg-7">
-                    <div class="feature_img">
-                        <img src="img/about_img.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="feature_part_text">
-                        <img src="img/section_tittle_img.png" alt="#">
-                        <h2>Amazing tour</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-                            ipsum suspendisse ultrices gravida Risus commodo viverra maecenas
-                            accumsan lacus vel facilisis. </p>
-                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt
-                            ut</span>
-                        <div class="row">
-                            <div class="col-sm-6 col-md-4">
-                                <div class="feature_part_text_iner">
-                                    <img src="img/icon/tour_icon_1.png" alt="">
-                                    <h4>london</h4>
-                                    <p>35 Places</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <div class="feature_part_text_iner">
-                                    <img src="img/icon/tour_icon_2.png" alt="">
-                                    <h4>Kashmir</h4>
-                                    <p>75 Places</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-4">
-                                <div class="feature_part_text_iner">
-                                    <img src="img/icon/tour_icon_3.png" alt="">
-                                    <h4>chaina</h4>
-                                    <p>85 Places</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <img src="img/animate_icon/Shape-1.png" alt="" class="feature_icon_1">
-        <img src="img/animate_icon/Shape-2.png" alt="" class="feature_icon_2">
-        <img src="img/animate_icon/Shape-3.png" alt="" class="feature_icon_3">
-    </section>
-    <!-- feature part end-->
-
     <!-- popular place part start-->
     <section class="popular_place padding_top">
         <div class="container">
@@ -161,35 +102,141 @@
                 <div class="col-lg-5">
                     <div class="section_tittle text-center">
                         <img src="img/section_tittle_img.png" alt="">
-                        <h2>Most Popular <span>place</span> </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit 
-                        sed  do eiusmod tempor incididunt ut</p>
+                        <h2>테마<span>목록</span> </h2>
                     </div>
                 </div>
-            </div>
+            </div>	
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
-                        <img src="img/icon/place_icon_1.png" alt="">
-                        <h4>Life of Egeft</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor</p>
-                        <a href="#" class="btn1">book now</a>
-                    </div>
-                </div><div class="col-lg-4 col-sm-6">
-                    <div class="single_popular_place">
-                        <img src="img/icon/place_icon_2.png" alt="">
-                        <h4>Biking in Norway</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor</p>
-                        <a href="#" class="btn1">book now</a>
-                    </div>
-                </div><div class="col-lg-4 col-sm-6">
-                    <div class="single_popular_place">
-                        <img src="img/icon/place_icon_3.png" alt="">
-                        <h4>Tour of iceland</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor</p>
-                        <a href="#" class="btn1">book now</a>
+                        <img src="img/location/seoul.png" alt="">
+                        <h4>서울특별시</h4>
+                        <p>Drive Course List</p>
+                        <a href="#" class="btn1">read more</a>
                     </div>
                 </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/location/kyunggi.jpg" height="75" alt="">
+                        <h4>경기도</h4>
+                        <p>Drive Course List</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/location/incheon.jpg" height="75" alt="">
+                        <h4>인천광역시</h4>
+                        <p>Drive Course List</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/location/kangwon.jpg" height="75" alt="">
+                        <h4>강원도</h4>
+                        <p>Drive Course List</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                 <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/location/daejeon.jpg" height="75" alt="">
+                        <h4>대전광역시</h4>
+                        <p>Drive Course List</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/location/sejong.jpg" height="75" alt="">
+                        <h4>세종시</h4>
+                        <p>Drive Course List</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                    </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/location/chungnam.png" height="75" alt="">
+                        <h4>충청남도</h4>
+                        <p>Drive Course List</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/location/chungbuk.png" height="75" alt="">
+                        <h4>충청북도</h4>
+                        <p>Drive Course List</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                 <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/location/daegu.jpg" height="75" alt="">
+                        <h4>대구광역시</h4>
+                        <p>Drive Course List</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                    </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/location/gyeongnam.png" height="75" alt="">
+                        <h4>경상남도</h4>
+                        <p>Drive Course List</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/location/gyeongbuk.png" height="75" alt="">
+                        <h4>경상북도</h4>
+                        <p>Drive Course List</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/location/ulsan.jpg" height="75" alt="">
+                        <h4>울산광역시</h4>
+                        <p>Drive Course List</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                     </div>
+                 <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/location/gwangju.jpg" height="75" alt="">
+                        <h4>광주광역시</h4>
+                        <p>Drive Course List</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                    </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/location/jeollabukdo.png" height="75" alt="">
+                        <h4>전라북도</h4>
+                        <p>Drive Course List</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/location/jeollanamdo.jpg" height="75" alt="">
+                        <h4>전라남도</h4>
+                        <p>Drive Course List</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/location/jejudo.png" height="75" alt="">
+                        <h4>제주도</h4>
+                        <p>Drive Course List</p>
+                        <a href="#" class="btn1">read more</a>
+                    </div>
+                </div>
+                     
             </div>
         </div>
     </section>
