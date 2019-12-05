@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -111,40 +111,50 @@
                     <div class="single_popular_place">
                         <img src="img/location/seoul.png" alt="">
                         <h4>서울특별시</h4>
-                        <p>Drive Course List</p>
-                        <a href="#" class="btn1">read more</a>
+                        <form action="locationControllerServlet" method="post">
+							<input type="hidden" name="location" value="서울특별시">
+	                        <button type="submit" class="genric-btn success radius">read more</button>
+                        </form>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/location/kyunggi.jpg" height="75" alt="">
                         <h4>경기도</h4>
-                        <p>Drive Course List</p>
-                        <a href="#" class="btn1">read more</a>
+                        <form action="locationControllerServlet" method="post">
+							<input type="hidden" name="location" value="경기도">
+	                        <button type="submit" class="genric-btn success radius">read more</button>
+                        </form>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/location/incheon.jpg" height="75" alt="">
                         <h4>인천광역시</h4>
-                        <p>Drive Course List</p>
-                        <a href="#" class="btn1">read more</a>
+                        <form action="locationControllerServlet" method="post">
+							<input type="hidden" name="location" value="인천광역시">
+	                        <button type="submit" class="genric-btn success radius">read more</button>
+                        </form>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/location/kangwon.jpg" height="75" alt="">
                         <h4>강원도</h4>
-                        <p>Drive Course List</p>
-                        <a href="#" class="btn1">read more</a>
+                       <form action="locationControllerServlet" method="post">
+							<input type="hidden" name="location" value="강원도">
+	                        <button type="submit" class="genric-btn success radius">read more</button>
+                        </form>
                     </div>
                 </div>
                  <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/location/daejeon.jpg" height="75" alt="">
                         <h4>대전광역시</h4>
-                        <p>Drive Course List</p>
-                        <a href="#" class="btn1">read more</a>
+                       <form action="locationControllerServlet" method="post">
+							<input type="hidden" name="location" value="대전광역시">
+	                        <button type="submit" class="genric-btn success radius">read more</button>
+                        </form>
                     </div>
                     </div>
                     
@@ -152,91 +162,112 @@
                     <div class="single_popular_place">
                         <img src="img/location/sejong.jpg" height="75" alt="">
                         <h4>세종시</h4>
-                        <p>Drive Course List</p>
-                        <a href="#" class="btn1">read more</a>
+                       <form action="locationControllerServlet" method="post">
+							<input type="hidden" name="location" value="세종특별자치시">
+	                        <button type="submit" class="genric-btn success radius">read more</button>
+                        </form>
                     </div>
                     </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/location/chungnam.png" height="75" alt="">
                         <h4>충청남도</h4>
-                        <p>Drive Course List</p>
-                        <a href="#" class="btn1">read more</a>
+                       <form action="locationControllerServlet" method="post">
+							<input type="hidden" name="location" value="충청남도">
+	                        <button type="submit" class="genric-btn success radius">read more</button>
+                        </form>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/location/chungbuk.png" height="75" alt="">
                         <h4>충청북도</h4>
-                        <p>Drive Course List</p>
-                        <a href="#" class="btn1">read more</a>
+                        <form action="locationControllerServlet" method="post">
+							<input type="hidden" name="location" value="충청북도">
+	                        <button type="submit" class="genric-btn success radius">read more</button>
+                        </form>
                     </div>
                 </div>
                  <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/location/daegu.jpg" height="75" alt="">
                         <h4>대구광역시</h4>
-                        <p>Drive Course List</p>
-                        <a href="#" class="btn1">read more</a>
+                        <form action="locationControllerServlet" method="post">
+							<input type="hidden" name="location" value="대구광역시">
+	                        <button type="submit" class="genric-btn success radius">read more</button>
+                        </form>
                     </div>
                     </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/location/gyeongnam.png" height="75" alt="">
                         <h4>경상남도</h4>
-                        <p>Drive Course List</p>
-                        <a href="#" class="btn1">read more</a>
+                        <form action="locationControllerServlet" method="post">
+							<input type="hidden" name="location" value="경상남도">
+	                        <button type="submit" class="genric-btn success radius">read more</button>
+                        </form>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/location/gyeongbuk.png" height="75" alt="">
                         <h4>경상북도</h4>
-                        <p>Drive Course List</p>
-                        <a href="#" class="btn1">read more</a>
+                        <form action="locationControllerServlet" method="post">
+							<input type="hidden" name="location" value="경상북도">
+	                        <button type="submit" class="genric-btn success radius">read more</button>
+                        </form>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/location/ulsan.jpg" height="75" alt="">
                         <h4>울산광역시</h4>
-                        <p>Drive Course List</p>
-                        <a href="#" class="btn1">read more</a>
+                        <form action="locationControllerServlet" method="post">
+							<input type="hidden" name="location" value="울산광역시">
+	                        <button type="submit" class="genric-btn success radius">read more</button>
+                        </form>
                     </div>
                      </div>
                  <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/location/gwangju.jpg" height="75" alt="">
                         <h4>광주광역시</h4>
-                        <p>Drive Course List</p>
-                        <a href="#" class="btn1">read more</a>
+                        <form action="locationControllerServlet" method="post">
+							<input type="hidden" name="location" value="광주광역시">
+	                        <button type="submit" class="genric-btn success radius">read more</button>
+                        </form>
                     </div>
                     </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/location/jeollabukdo.png" height="75" alt="">
                         <h4>전라북도</h4>
-                        <p>Drive Course List</p>
-                        <a href="#" class="btn1">read more</a>
+                        <form action="locationControllerServlet" method="post">
+							<input type="hidden" name="location" value="전라북도">
+	                        <button type="submit" class="genric-btn success radius">read more</button>
+                        </form>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/location/jeollanamdo.jpg" height="75" alt="">
                         <h4>전라남도</h4>
-                        <p>Drive Course List</p>
-                        <a href="#" class="btn1">read more</a>
+                       <form action="locationControllerServlet" method="post">
+							<input type="hidden" name="location" value="전라남도">
+	                        <button type="submit" class="genric-btn success radius">read more</button>
+                        </form>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/location/jejudo.png" height="75" alt="">
                         <h4>제주도</h4>
-                        <p>Drive Course List</p>
-                        <a href="#" class="btn1">read more</a>
+                        <form action="locationControllerServlet" method="post">
+							<input type="hidden" name="location" value="제주도">
+	                        <button type="submit" class="genric-btn success radius">read more</button>
+                        </form>
                     </div>
-                </div>
-                     
+                </div>         
             </div>
         </div>
     </section>

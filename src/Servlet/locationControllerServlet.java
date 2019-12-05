@@ -1,7 +1,6 @@
 package Servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -16,16 +15,17 @@ import DAO.CourseDAO;
 import VO.Course;
 
 /**
- * Servlet implementation class themeControllerServlet
+ * Servlet implementation class locationControllerServlet
  */
-@WebServlet("/themeControllerServlet")
-public class themeControllerServlet extends HttpServlet {
+@WebServlet("/locationControllerServlet")
+public class locationControllerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private CourseDAO courseDAO; 
+	private CourseDAO courseDAO;
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public themeControllerServlet() {
+    public locationControllerServlet() {
     	String jdbcURL = 
         		"jdbc:mysql://localhost:3306/bts?useTimezone=true&serverTimezone=UTC";
         String jdbcUsername = "root";
@@ -40,12 +40,12 @@ public class themeControllerServlet extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		
-		String theme = request.getParameter("theme");
+		String location = request.getParameter("location");
 		try {
-			List<Course> listCourse = courseDAO.getCourseByTheme(theme);
+			List<Course> listCourse = courseDAO.getCourseByLocation(location);
 			request.setAttribute("listCourse", listCourse);
-			request.setAttribute("theme", theme);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("courseListByTheme.jsp");
+			request.setAttribute("location", location);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("courseListByLocation.jsp");
 			dispatcher.forward(request, response);
 		} catch (SQLException e) {
 			e.printStackTrace();
