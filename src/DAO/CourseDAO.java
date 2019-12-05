@@ -44,6 +44,57 @@ public class CourseDAO {
     
     //////////////////////// SQL METHOD //////////////////////////
     
+    public List<Double> getCourseAddr(String id) throws SQLException {
+    	List<Double> list = new ArrayList<Double>();
+    	String sql = "SELECT * FROM courseaddr WHERE addr_id = ?";
+    	connect();
+    	PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+    	statement.setString(1, id);
+    	ResultSet resultSet = statement.executeQuery();
+    	while(resultSet.next()) {
+    		list.add(resultSet.getDouble("depart_lat"));
+    		list.add(resultSet.getDouble("depart_long"));
+    		list.add(resultSet.getDouble("dest_lat"));
+    		list.add(resultSet.getDouble("dest_long"));
+    	}
+    	
+    	return list;
+    }
+    
+    public Course detailCourse(String id) throws SQLException {
+    	String sql = 
+    			"select course_id, course_name, course_loc, sum(star_eval)as sum, count(star_eval) as count, dist, total_time from courseinfo " +
+    			"left join courseeval on course_id = eval_course_id " +
+    			"left join coursespec on course_id = spec_id " +
+    			"left join coursetheme on course_id=coursetheme_id "+
+    			"where course_id = ? " +
+    			"group by course_id;";
+    	connect();
+    	PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+    	statement.setString(1, id);
+    	ResultSet resultSet = statement.executeQuery();
+    	Course c = null;
+    	while (resultSet.next()) {
+    		int courseId = resultSet.getInt("Course_ID");
+    		String courseName = resultSet.getString("Course_Name");
+    		String location = resultSet.getString("Course_Loc");
+    		double dist = resultSet.getDouble("Dist");
+    		float summation = resultSet.getFloat("sum");
+    		int totalTime = resultSet.getInt("Total_Time");
+    		int evalCount = resultSet.getInt("count");
+    		if (evalCount == 0) {
+    			c = new Course(courseId, courseName, location, dist, totalTime, evalCount, 0);
+    		} else {
+    			float heart = summation / evalCount;
+    			c = new Course(courseId, courseName, location, dist, totalTime, evalCount, 0);
+    		}
+    	}
+    	resultSet.close();
+    	statement.close();
+    	disconnect();
+    	return c;
+    }
+    
     public List<Course> returnSearch(String location, String theme, String search) throws SQLException {
     	List<Course> listCourse = new ArrayList<>();
     	String sql = null;

@@ -15,16 +15,16 @@ import DAO.CourseDAO;
 import VO.Course;
 
 /**
- * Servlet implementation class courseSearchServlet
+ * Servlet implementation class viewDetail
  */
-@WebServlet("/courseSearchServlet")
-public class courseSearchServlet extends HttpServlet {
+@WebServlet("/viewDetail")
+public class viewDetail extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private CourseDAO courseDAO;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public courseSearchServlet() {
+    public viewDetail() {
     	String jdbcURL = 
         		"jdbc:mysql://localhost:3306/bts?useTimezone=true&serverTimezone=UTC";
         String jdbcUsername = "root";
@@ -36,21 +36,18 @@ public class courseSearchServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String location = request.getParameter("location");
-		String theme = request.getParameter("theme");
-		String search = request.getParameter("search");
-		
+		String id = request.getParameter("courseId");
 		try {
-			List<Course> listCourse = courseDAO.returnSearch(location, theme, search);
-			request.setAttribute("listCourse", listCourse);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("searchResult.jsp");
+			Course c = courseDAO.detailCourse(id);
+			List<Double> list = courseDAO.getCourseAddr(id); 
+			request.setAttribute("course", c);
+			request.setAttribute("address", list);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("viewDetail.jsp");
 			dispatcher.forward(request, response);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
