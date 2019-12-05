@@ -6,8 +6,8 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/admin/Desktop/PROJECT2/eclipse/mysql-connector-java-8.0.18/mysql-connector-java-8.0.18.jar"/>
-	<classpathentry kind="lib" path="C:/Users/admin/Desktop/PROJECT2/eclipse/taglibs-standard-spec-1.2.5.jar"/>
+	<classpathentry kind="lib" path="D:/PCH/학교자료/19-2/데이터베이스/팀플/mysql-connector-java-8.0.18/mysql-connector-java-8.0.18.jar"/>
+	<classpathentry kind="lib" path="D:/PCH/학교자료/19-2/데이터베이스/팀플/taglibs-standard-spec-1.2.5.jar"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
