@@ -112,7 +112,7 @@
 	            <c:forEach var="course" items="${listCourse}">
 		            <div class="col-lg-4 col-sm-4">
 	                    <div class="single_blog_part">
-	                        <img src="img/course_id/${course.courseId}.jpg" height=250, width=300 alt="">
+	                        <img src="" alt="">
 	                        <div class="blog_text">
 	                            <h2><c:out value="${course.courseName}"></c:out></h2>
 	                            <p><c:out value="${course.location}"></c:out></p>
