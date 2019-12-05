@@ -124,12 +124,11 @@
 	                                </li>
 	                                <li>
 	                                    <i class="ti-heart"></i>
-	                                    <p><c:out value="${course.heart }"></c:out></p>
 	                                    <!-- 이부분에 나중에 star rate 넣을 예정. -->
 	                                </li>
 	                                <li>
 	                                    <i class="far fa-comment-dots"></i>
-	                                    <p><c:out value="${course.evalCount }"></c:out></p>
+	                                    <p>10</p>
 	                                </li>
 	                            </ul>
 	                        </div>
