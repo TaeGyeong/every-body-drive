@@ -3,7 +3,7 @@
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="every-body-drive"/>
         <property name="java-output-path" value="/every-body-drive/build/classes"/>
+        <property name="context-root" value="every-body-drive-old3"/>
     </wb-module>
 </project-modules>
