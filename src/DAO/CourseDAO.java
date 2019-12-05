@@ -44,28 +44,6 @@ public class CourseDAO {
     
     //////////////////////// SQL METHOD //////////////////////////
     
-    public List<Integer> getcountEval(List<Course> list) throws SQLException {
-    	List<Integer> returnList = new ArrayList<>();
-    	for(Course course: list) {
-    		int id = course.getCourseId();
-    		String sql = "SELECT count(*) FROM CourseEval WHERE Eval_ID = ?";
-    		connect();
-    		PreparedStatement statement = jdbcConnection.prepareStatement(sql);
-    		statement.setInt(1, id);
-    		ResultSet resultSet = statement.executeQuery();
-    		if(resultSet.next()) {
-    			int count = resultSet.getInt(1);
-    			returnList.add(count);
-    		}
-    		
-    		resultSet.close();
-        	statement.close();
-        	
-        	disconnect();
-    	}
-    	return returnList;
-    }
-    
     public List<Course> returnSearch(String location, String theme, String search) throws SQLException {
     	List<Course> listCourse = new ArrayList<>();
     	String sql = null;

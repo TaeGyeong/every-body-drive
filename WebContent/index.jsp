@@ -70,6 +70,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="MapTest.jsp">Map Test</a>
                                 </li>
+                                <li>
+                                    <a class="nav-link" href="submit.jsp">Submit</a>
+                                </li> 
                             </ul>
                         </div>
                         <a class="btn_1 d-none d-lg-block" href="#">Hot Line 052</a>
