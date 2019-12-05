@@ -144,4 +144,34 @@ public class CourseDAO {
     	
     	return listCourse;
     }
+    
+    public List<Course> getCourseByLocation(String loc) throws SQLException {
+    	List<Course> listCourse = new ArrayList<>();
+    	String sql = "SELECT distinct Course_ID, Course_Name, Course_Loc, Dist, Total_Time " +
+    			"FROM courseinfo, coursespec " + 
+    			"WHERE Course_ID = Spec_ID and Course_Loc in(" + 
+    				"SELECT Location FROM location_list " + 
+    				"WHERE Location = ?" + 
+    				");";
+    	connect();
+    	PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+    	statement.setString(1, loc);
+    	ResultSet resultSet = statement.executeQuery();
+    	
+    	while(resultSet.next()) {
+    		int courseId = resultSet.getInt("Course_ID");
+    		String courseName = resultSet.getString("Course_Name");
+    		String location = resultSet.getString("Course_Loc");
+    		double dist = resultSet.getDouble("Dist");
+    		int totalTime = resultSet.getInt("Total_Time");
+    		listCourse.add(new Course(courseId, courseName, location, dist, totalTime));
+    	}
+    	
+    	resultSet.close();
+    	statement.close();
+    	
+    	disconnect();
+    	
+    	return listCourse;
+    }
 }

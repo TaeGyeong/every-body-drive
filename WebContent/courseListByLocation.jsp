@@ -88,7 +88,7 @@
 					<div class="breadcrumb_iner text-center">
 						<div class="breadcrumb_iner_item">
 							<h2>
-								<c:out value="${theme}"></c:out>
+								<c:out value="${location}"></c:out>
 							</h2>
 						</div>
 					</div>
@@ -104,7 +104,7 @@
                 <div class="col-lg-5">
                     <div class="section_tittle">
                         <img src="img/section_tittle_img.png" alt="">
-                        <h2>${theme } 테마목록</h2>
+                        <h2>${location} 지역목록</h2>
                     </div>
                 </div>
             </div>
@@ -112,7 +112,7 @@
 	            <c:forEach var="course" items="${listCourse}">
 		            <div class="col-lg-4 col-sm-4">
 	                    <div class="single_blog_part">
-	                        <img src="img/course_id/${course.courseId}.jpg" height=250, width=300 alt="">
+	                        <img src="" alt="">
 	                        <div class="blog_text">
 	                            <h2><c:out value="${course.courseName}"></c:out></h2>
 	                            <p><c:out value="${course.location}"></c:out></p>
@@ -140,8 +140,6 @@
         </div>
     </section>
     <!-- blog post part end-->
-    
-    
-	
+
 </body>
 </html>
