@@ -109,6 +109,39 @@
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
+                        <img src="img/theme/cafe.png" alt="">
+                        <h4>카페</h4>
+                        <p>cafe</p>
+                        <form action="themeControllerServlet" method="post">
+							<input type="hidden" name="theme" value="카페">
+	                        <button type="submit" class="genric-btn success radius">read more</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/theme/park.png" alt="">
+                        <h4>공원</h4>
+                        <p>park</p>
+                        <form action="themeControllerServlet" method="post">
+							<input type="hidden" name="theme" value="공원">
+	                        <button type="submit" class="genric-btn success radius">read more</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
+                        <img src="img/theme/camera.png" alt="">
+                        <h4>명소</h4>
+                        <p>Famous Place</p>
+                        <form action="themeControllerServlet" method="post">
+							<input type="hidden" name="theme" value="명소">
+	                        <button type="submit" class="genric-btn success radius">read more</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="single_popular_place">
                         <img src="img/theme/sakura.png" alt="">
                         <h4>봄</h4>
                         <p>Spring</p>
@@ -151,17 +184,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_popular_place">
-                        <img src="img/theme/park.png" alt="">
-                        <h4>공원</h4>
-                        <p>park</p>
-                        <form action="themeControllerServlet" method="post">
-							<input type="hidden" name="theme" value="공원">
-	                        <button type="submit" class="genric-btn success radius">read more</button>
-                        </form>
-                    </div>
-                </div>
+                
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/theme/couple.png" alt="">
@@ -184,17 +207,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_popular_place">
-                        <img src="img/theme/camera.png" alt="">
-                        <h4>명소</h4>
-                        <p>Famous Place</p>
-                        <form action="themeControllerServlet" method="post">
-							<input type="hidden" name="theme" value="명소">
-	                        <button type="submit" class="genric-btn success radius">read more</button>
-                        </form>
-                    </div>
-                </div>
+                
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/theme/calm.png" alt="">
@@ -272,17 +285,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_popular_place">
-                        <img src="img/theme/cafe.png" alt="">
-                        <h4>카페</h4>
-                        <p>cafe</p>
-                        <form action="themeControllerServlet" method="post">
-							<input type="hidden" name="theme" value="카페">
-	                        <button type="submit" class="genric-btn success radius">read more</button>
-                        </form>
-                    </div>
-                </div>
+                
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/theme/driver.png" alt="">

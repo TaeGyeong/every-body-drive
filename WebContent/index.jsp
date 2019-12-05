@@ -101,37 +101,54 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="search_form">
-                        <form action="#">
+                        <form action="courseSearchServlet" method="post">
                             <div class="form-row">
-                                <div class="col-md-9">
+                                <div class="col-md-12">
                                     <div class="search_form_iner">
-										<select class="custom_select" id="inlineFormCustomSelect">
+										<select name="location" class="custom_select" id="inlineFormCustomSelect">
                                             <option selected>지역</option>
-                                            <option value="1">서울특별시</option>
-                                            <option value="2">경기도</option>
-                                            <option value="3">대전광역시</option>
-                                            <option value="4">대구광역시</option>
-                                            <option value="5">광주광역시</option>
-                                            <option value="6">부산광역시</option>
-                                            <option value="7">인천광역시</option>
-                                            <option value="8">울산광역시</option>
-                                            <option value="9">강원도</option>
-                                            <option value="10">충청북도</option>
-                                            <option value="11">충청남도</option>
-                                            <option value="12">경상북도</option>
-                                            <option value="13">경상남도</option>
-                                            <option value="14">전라북도</option>
-                                            <option value="15">전라남도</option>
-                                            <option value="16">세종특별자치시</option>
-                                            <option value="17">제주도</option>
+                                            <option value="서울특별시">서울특별시</option>
+                                            <option value="경기도">경기도</option>
+                                            <option value="대전광역시">대전광역시</option>
+                                            <option value="대구광역시">대구광역시</option>
+                                            <option value="광주광역시">광주광역시</option>
+                                            <option value="부산광역시">부산광역시</option>
+                                            <option value="인천광역시">인천광역시</option>
+                                            <option value="울산광역시">울산광역시</option>
+                                            <option value="강원도">강원도</option>
+                                            <option value="충청북도">충청북도</option>
+                                            <option value="충청남도">충청남도</option>
+                                            <option value="경상북도">경상북도</option>
+                                            <option value="경상남도">경상남도</option>
+                                            <option value="전라북도">전라북도</option>
+                                            <option value="전라남도">전라남도</option>
+                                            <option value="세종특별자치시">세종특별자치시</option>
+                                            <option value="제주도">제주도</option>
                                         </select>
-                                        <input type="text" name="first_name" placeholder="검색어를 입력하세요."
+                                        <select name="theme" class="custom_select" id="inlineFormCustomSelect" required>
+                                            <option selected>테마</option>
+                                            <option value="공원">공원</option>
+                                            <option value="카페">카페</option>
+                                            <option value="데이트">데이트</option>
+                                            <option value="명소">명소</option>
+                                            <option value="바다/호수">바다/호수</option>
+                                            <option value="봄">봄</option>
+                                            <option value="여름">여름</option>
+                                            <option value="가을">가을</option>
+                                            <option value="겨울">겨울</option>
+                                            <option value="당일치기">당일치기</option>
+                                            <option value="산악">산악</option>
+                                            <option value="새벽">새벽</option>
+                                            <option value="야간">야간</option>
+                                            <option value="초보">초보</option>
+                                            <option value="혼자">혼자</option>
+                                            <option value="주말">주말</option>
+                                        </select>
+                                        <input type="text" name="search" placeholder="검색어를 입력하세요."
                                         onfocus="this.placeholder = ''" onblur="this.placeholder = '검색어를 입력하세요.'" required
                                         class="single-input">
+                                		<button type="submit" class="genric-btn success">SEARCH</button>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <a href="#" class="search_btn">search</a>
                                 </div>
                             </div>
                         </form>
@@ -169,6 +186,14 @@
         <img src="img/animate_icon/Shape-2.png" alt="" class="feature_icon_2">
     </section>
     <!-- banner part start-->
+
+
+
+
+
+
+
+
 
     <!-- feature_part start-->
     <section class="feature_part padding_top">
@@ -259,318 +284,9 @@
     </section>
     <!-- use sasu part end-->
 
-    <!-- about_us part start-->
-    <section class="place_details section_padding">
-        <div class="container-fluid">
-            <div class="row justify-content-between">
-                <div class="col-md-6 col-lg-6">
-                    <div class="place_detauls_text">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-xl-6">
-                                <div class="place_details_content">
-                                    <img src="img/section_tittle_img.png" alt="#">
-                                    <h2>Amazing tour</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
-                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-                                        ipsum suspendisse ultrices gravida Risus commodo viverra maecenas
-                                        accumsan lacus vel facilisis. </p>
-                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt
-                                    ut</span>
-                                </div>
-                            </div>
-                        </div>
-                        <img src="img/plase_details_1.png" alt="#">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="place_details_img">
-                        <img src="img/plase_details_2.png" alt="#">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="view_all_btn">
-            <a href="#" class="view_btn">view all</a>
-        </div>
-    </section>
-    <!-- about_us part end-->
-
-    <!-- pricing part start-->
-    <section class="tour_package section_padding">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-sm-6">
-                    <div class="tour_package_cotent owl-carousel">
-                        <div class="single_tour_package">
-                            <img src="img/tour_plan_1.png" alt="">
-                            <div class="tour_pack_content">
-                                <h4>Sawpalo, Brasil</h4>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipi
-                                    elit sed do eiusmod tempor incididunt</p>
-                                <div class="tour_content_rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                    </ul>
-                                    <a href="#" class="btn1">join now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_tour_package">
-                            <img src="img/tour_plan_2.png" alt="">
-                            <div class="tour_pack_content">
-                                <h4>Sawpalo, Brasil</h4>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipi
-                                    elit sed do eiusmod tempor incididunt</p>
-                                <div class="tour_content_rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                    </ul>
-                                    <a href="#" class="btn1">join now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_tour_package">
-                            <img src="img/tour_plan_1.png" alt="">
-                            <div class="tour_pack_content">
-                                <h4>Sawpalo, Brasil</h4>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipi
-                                    elit sed do eiusmod tempor incididunt</p>
-                                <div class="tour_content_rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                    </ul>
-                                    <a href="#" class="btn1">join now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_tour_package">
-                            <img src="img/tour_plan_2.png" alt="">
-                            <div class="tour_pack_content">
-                                <h4>Sawpalo, Brasil</h4>
-                                <p> Lorem ipsum dolor sit amet, consectetur adipi
-                                    elit sed do eiusmod tempor incididunt</p>
-                                <div class="tour_content_rating">
-                                    <ul>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                        <li><a href="#"><i class="fas fa-star"></i></a></li>
-                                    </ul>
-                                    <a href="#" class="btn1">join now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-xl-3 offset-lg-1 col-sm-6">
-                    <div class="tour_pack_content">
-                        <img src="img/section_tittle_img.png" alt="">
-                        <h2>tour package</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit 
-                        sed  do eiusmod tempor incididunt ut</p>
-                        <a href="#" class="btn_1">join now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- pricing part end-->
-
-    <!-- cta part start-->
-    <section class="cta_part section_padding">
-        <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-8 col-xl-7">
-                    <div class="cta_text text-center">
-                        <h5>Join Our Newsletter</h5>
-                        <h2>Subscribe to get Updated
-                                with new offers</h2>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Enter email address" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
-                            <div class="input-group-append" id="button-addon4">
-                                <a href="#" class="subs_btn">subscribe now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- cta part end-->
-
-    <!-- blog part start-->
-    <section class="blog_part padding_top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="section_tittle">
-                        <img src="img/section_tittle_img.png" alt="">
-                        <h2>our blog</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit 
-                        sed  do eiusmod tempor incididunt ut</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_blog_part">
-                        <img src="img/blog/blog_1.png" alt="">
-                        <div class="blog_text">
-                            <h2>Luxerious Car Rental</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna 
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                            <ul>
-                                <li>
-                                    <i class="ti-calendar"></i>
-                                    <p>13th Dec</p>
-                                </li>
-                                <li>
-                                    <i class="ti-heart"></i>
-                                    <p>15</p>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment-dots"></i>
-                                    <p>10</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_blog_part">
-                        <img src="img/blog/blog_2.png" alt="">
-                        <div class="blog_text">
-                            <h2>Luxerious Car Rental</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna 
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                            <ul>
-                                <li>
-                                    <i class="ti-calendar"></i>
-                                    <p>13th Dec</p>
-                                </li>
-                                <li>
-                                    <i class="ti-heart"></i>
-                                    <p>15</p>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment-dots"></i>
-                                    <p>10</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_blog_part">
-                        <img src="img/blog/blog_3.png" alt="">
-                        <div class="blog_text">
-                            <h2>Luxerious Car Rental</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna 
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                            <ul>
-                                <li>
-                                    <i class="ti-calendar"></i>
-                                    <p>13th Dec</p>
-                                </li>
-                                <li>
-                                    <i class="ti-heart"></i>
-                                    <p>15</p>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment-dots"></i>
-                                    <p>10</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <img src="img/overlay_1.png" alt="#" class="blog_img">
-    </section>
-    <!-- blog part end-->
-
     <!--::footer_part start::-->
     <footer class="footer_part">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-lg-3">
-                    <div class="single_footer_part">
-                        <h4>About Agency</h4>
-                        <p>The world has become so fast paced that people don’t want 
-                        to stand by reading a page of information, they would much 
-                        rather look at a presentation and understand the message. 
-                        It has come to a point where images</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="single_footer_part">
-                        <h4>Navigation Links</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Portfolio</a></li>
-                            <li><a href="#">team</a></li>
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="single_footer_part">
-                        <h4>Newsletter</h4>
-                        <p>Heaven fruitful doesn't over lesser in days. Appear creeping seasons deve behold bearing days
-                            open
-                        </p>
-                        <div id="mc_embed_signup">
-                            <form target="_blank"
-                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                                method="get" class="subscribe_form relative mail_part">
-                                <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
-                                    class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
-                                    onblur="this.placeholder = ' Email Address '">
-                                <button type="submit" name="submit" id="newsletter-submit"
-                                    class="email_icon newsletter-submit button-contactForm"><i
-                                        class="far fa-paper-plane"></i></button>
-                                <div class="mt-10 info"></div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="single_footer_part">
-                        <h4>Instafeed</h4>
-                        <div class="footer_img">
-                            <a href="#"><img src="img/footer_img/footer_1.png" alt=""></a>
-                            <a href="#"><img src="img/footer_img/footer_2.png" alt=""></a>
-                            <a href="#"><img src="img/footer_img/footer_3.png" alt=""></a>
-                            <a href="#"><img src="img/footer_img/footer_4.png" alt=""></a>
-                            <a href="#"><img src="img/footer_img/footer_5.png" alt=""></a>
-                            <a href="#"><img src="img/footer_img/footer_6.png" alt=""></a>
-                            <a href="#"><img src="img/footer_img/footer_7.png" alt=""></a>
-                            <a href="#"><img src="img/footer_img/footer_8.png" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <hr>
             <div class="row">
                 <div class="col-lg-8">

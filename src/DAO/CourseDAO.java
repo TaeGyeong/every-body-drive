@@ -42,6 +42,79 @@ public class CourseDAO {
         }
     }
     
+    public List<Course> returnSearch(String location, String theme, String search) throws SQLException {
+    	List<Course> listCourse = new ArrayList<>();
+    	String sql = null;
+    	PreparedStatement statement = null;
+    	System.out.println(location);
+    	System.out.println(theme);
+    	System.out.println(search);
+    	connect();
+    	
+    	if (location.equals("지역") && theme.equals("테마")) {
+    		System.out.println(1);
+    		sql = 
+			"SELECT distinct course_id, course_name, course_loc, dist, total_time " + 
+			"FROM courseinfo, coursespec " + 
+			"WHERE course_id in (" +
+				"select courseTheme_ID from courseTheme" +
+			") AND spec_id=course_id AND course_name LIKE ?;";
+    		statement = jdbcConnection.prepareStatement(sql);
+    		statement.setString(1, "%" + search + "%");
+    	} else if (theme.equals("테마")) {
+    		System.out.println(2);
+    		sql = 
+			"SELECT distinct course_id, course_name, course_loc, dist, total_time " + 
+	    			"FROM courseinfo, coursespec " + 
+	    			"WHERE course_id in (" +
+	    				"select courseTheme_ID from courseTheme" +
+	    				") AND course_loc=? AND spec_id=course_id AND course_name LIKE ?;";
+    		statement = jdbcConnection.prepareStatement(sql);
+    		statement.setString(1, location);
+    		statement.setString(2, "%" + search + "%");
+    	} else if (location.equals("지역")){
+    		System.out.println(3);
+    		sql = 
+			"SELECT distinct course_id, course_name, course_loc, dist, total_time " + 
+			"FROM courseinfo, coursespec " + 
+			"WHERE course_id IN (" +
+				"SELECT courseTheme_ID FROM courseTheme WHERE theme_id=?" +
+			") AND spec_id=course_id AND course_name LIKE ?;";
+    		statement = jdbcConnection.prepareStatement(sql);
+    		statement.setString(1, theme);
+    		statement.setString(2, "%" + search + "%");
+    	} else {
+    		System.out.println(4);
+    		sql = 
+			"SELECT distinct course_id, course_name, course_loc, dist, total_time " + 
+			"FROM courseinfo, coursespec " + 
+			"WHERE course_id IN (" +
+				"SELECT courseTheme_ID FROM courseTheme WHERE theme_id=?" +
+			") AND course_loc = ? AND spec_id=course_id AND course_name LIKE ?;";
+    		statement = jdbcConnection.prepareStatement(sql);
+    		statement.setString(1, theme);
+    		statement.setString(2, location);
+    		statement.setString(3, "%" + search + "%");
+    	}
+    	ResultSet resultSet = statement.executeQuery();
+    	
+    	while (resultSet.next()) {
+    		int courseId = resultSet.getInt("Course_ID");
+    		String courseName = resultSet.getString("Course_Name");
+    		String loc = resultSet.getString("Course_Loc");
+    		double dist = resultSet.getDouble("Dist");
+    		int totalTime = resultSet.getInt("Total_Time");
+    		listCourse.add(new Course(courseId, courseName, loc, dist, totalTime));
+    	}
+    	
+    	resultSet.close();
+    	statement.close();
+    	
+    	disconnect();
+    	
+    	return listCourse;
+    }
+    
     public List<Course> getCourseByTheme(String theme) throws SQLException {
     	List<Course> listCourse = new ArrayList<>();
     	String sql = "SELECT distinct Course_ID, Course_Name, Course_Loc, Dist, Total_Time " + 
