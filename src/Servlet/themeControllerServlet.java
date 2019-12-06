@@ -29,7 +29,7 @@ public class themeControllerServlet extends HttpServlet {
     	String jdbcURL = 
         		"jdbc:mysql://localhost:3306/bts?useTimezone=true&serverTimezone=UTC";
         String jdbcUsername = "root";
-        String jdbcPassword = "wneod78";
+        String jdbcPassword = "111111";
         courseDAO = new CourseDAO(jdbcURL, jdbcUsername, jdbcPassword);
     }
 
