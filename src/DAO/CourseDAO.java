@@ -42,6 +42,59 @@ public class CourseDAO {
         }
     }
     
+    //////////////////////// SQL METHOD //////////////////////////
+    
+    public List<Double> getCourseAddr(String id) throws SQLException {
+    	List<Double> list = new ArrayList<Double>();
+    	String sql = "SELECT * FROM courseaddr WHERE addr_id = ?";
+    	connect();
+    	PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+    	statement.setString(1, id);
+    	ResultSet resultSet = statement.executeQuery();
+    	while(resultSet.next()) {
+    		list.add(resultSet.getDouble("depart_lat"));
+    		list.add(resultSet.getDouble("depart_long"));
+    		list.add(resultSet.getDouble("dest_lat"));
+    		list.add(resultSet.getDouble("dest_long"));
+    	}
+    	
+    	return list;
+    }
+    
+    public Course detailCourse(String id) throws SQLException {
+    	String sql = 
+    			"select course_id, course_name, course_loc, sum(star_eval)as sum, count(star_eval) as count, dist, total_time from courseinfo " +
+    			"left join courseeval on course_id = eval_course_id " +
+    			"left join coursespec on course_id = spec_id " +
+    			"left join coursetheme on course_id=coursetheme_id "+
+    			"where course_id = ? " +
+    			"group by course_id;";
+    	connect();
+    	PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+    	statement.setString(1, id);
+    	ResultSet resultSet = statement.executeQuery();
+    	Course c = null;
+    	while (resultSet.next()) {
+    		int courseId = resultSet.getInt("Course_ID");
+    		String courseName = resultSet.getString("Course_Name");
+    		String location = resultSet.getString("Course_Loc");
+    		double dist = resultSet.getDouble("Dist");
+    		float summation = resultSet.getFloat("sum");
+    		int totalTime = resultSet.getInt("Total_Time");
+    		int evalCount = resultSet.getInt("count");
+    		if (evalCount == 0) {
+    			c = new Course(courseId, courseName, location, dist, totalTime, evalCount, 0);
+    		} else {
+    			float heart = summation / evalCount;
+    			c = new Course(courseId, courseName, location, dist, totalTime, evalCount, 0);
+    		}
+    	}
+    	resultSet.close();
+    	statement.close();
+    	disconnect();
+    	return c;
+    }
+    
     public List<Course> returnSearch(String location, String theme, String search) throws SQLException {
     	List<Course> listCourse = new ArrayList<>();
     	String sql = null;
@@ -52,7 +105,6 @@ public class CourseDAO {
     	connect();
     	
     	if (location.equals("지역") && theme.equals("테마")) {
-    		System.out.println(1);
     		sql = 
 			"SELECT distinct course_id, course_name, course_loc, dist, total_time " + 
 			"FROM courseinfo, coursespec " + 
@@ -62,7 +114,6 @@ public class CourseDAO {
     		statement = jdbcConnection.prepareStatement(sql);
     		statement.setString(1, "%" + search + "%");
     	} else if (theme.equals("테마")) {
-    		System.out.println(2);
     		sql = 
 			"SELECT distinct course_id, course_name, course_loc, dist, total_time " + 
 	    			"FROM courseinfo, coursespec " + 
@@ -73,7 +124,6 @@ public class CourseDAO {
     		statement.setString(1, location);
     		statement.setString(2, "%" + search + "%");
     	} else if (location.equals("지역")){
-    		System.out.println(3);
     		sql = 
 			"SELECT distinct course_id, course_name, course_loc, dist, total_time " + 
 			"FROM courseinfo, coursespec " + 
@@ -84,7 +134,6 @@ public class CourseDAO {
     		statement.setString(1, theme);
     		statement.setString(2, "%" + search + "%");
     	} else {
-    		System.out.println(4);
     		sql = 
 			"SELECT distinct course_id, course_name, course_loc, dist, total_time " + 
 			"FROM courseinfo, coursespec " + 
@@ -117,12 +166,13 @@ public class CourseDAO {
     
     public List<Course> getCourseByTheme(String theme) throws SQLException {
     	List<Course> listCourse = new ArrayList<>();
-    	String sql = "SELECT distinct Course_ID, Course_Name, Course_Loc, Dist, Total_Time " + 
-    			"FROM courseinfo, coursespec " + 
-    			"WHERE Course_ID = Spec_ID and Course_ID in (" + 
-	    			"SELECT CourseTheme_ID FROM coursetheme " + 
-	    			"WHERE Theme_ID = ?" + 
-	    			");";
+    	String sql = 
+    			"select course_id, course_name, course_loc, sum(star_eval)as sum, count(star_eval) as count, dist, total_time from courseinfo " +
+    			"left join courseeval on course_id = eval_course_id " +
+    			"left join coursespec on course_id = spec_id " +
+    			"left join coursetheme on course_id=coursetheme_id "+
+    			"where theme_id = ? " +
+    			"group by course_id;";
     	connect();
     	PreparedStatement statement = jdbcConnection.prepareStatement(sql);
     	statement.setString(1, theme);
@@ -133,8 +183,16 @@ public class CourseDAO {
     		String courseName = resultSet.getString("Course_Name");
     		String location = resultSet.getString("Course_Loc");
     		double dist = resultSet.getDouble("Dist");
+    		float summation = resultSet.getFloat("sum");
     		int totalTime = resultSet.getInt("Total_Time");
-    		listCourse.add(new Course(courseId, courseName, location, dist, totalTime));
+    		int evalCount = resultSet.getInt("count");
+    		if (evalCount == 0) {
+    			listCourse.add(new Course(courseId, courseName, location, dist, totalTime, evalCount, evalCount));
+    		} else {
+    			float heart = summation / evalCount;
+    			listCourse.add(new Course(courseId, courseName, location, dist, totalTime, evalCount, heart));
+    		}
+    		
     	}
     	
     	resultSet.close();
@@ -147,24 +205,33 @@ public class CourseDAO {
     
     public List<Course> getCourseByLocation(String loc) throws SQLException {
     	List<Course> listCourse = new ArrayList<>();
-    	String sql = "SELECT distinct Course_ID, Course_Name, Course_Loc, Dist, Total_Time " +
-    			"FROM courseinfo, coursespec " + 
-    			"WHERE Course_ID = Spec_ID and Course_Loc in(" + 
-    				"SELECT Location FROM location_list " + 
-    				"WHERE Location = ?" + 
-    				");";
+    	String sql = 
+    	"select course_id, course_name, course_loc, sum(star_eval)as sum, count(star_eval) as count, dist, total_time from courseinfo " +
+		"left join courseeval on course_id = eval_course_id " +
+		"left join coursespec on course_id = spec_id " +
+		"left join coursetheme on course_id=coursetheme_id "+
+		"where course_loc = ? " +
+		"group by course_id;";
     	connect();
     	PreparedStatement statement = jdbcConnection.prepareStatement(sql);
     	statement.setString(1, loc);
     	ResultSet resultSet = statement.executeQuery();
     	
-    	while(resultSet.next()) {
+    	while (resultSet.next()) {
     		int courseId = resultSet.getInt("Course_ID");
     		String courseName = resultSet.getString("Course_Name");
     		String location = resultSet.getString("Course_Loc");
     		double dist = resultSet.getDouble("Dist");
+    		float summation = resultSet.getFloat("sum");
     		int totalTime = resultSet.getInt("Total_Time");
-    		listCourse.add(new Course(courseId, courseName, location, dist, totalTime));
+    		int evalCount = resultSet.getInt("count");
+    		if (evalCount == 0) {
+    			listCourse.add(new Course(courseId, courseName, location, dist, totalTime, evalCount, evalCount));
+    		} else {
+    			float heart = summation / evalCount;
+    			listCourse.add(new Course(courseId, courseName, location, dist, totalTime, evalCount, heart));
+    		}
+    		
     	}
     	
     	resultSet.close();

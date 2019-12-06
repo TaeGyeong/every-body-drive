@@ -30,7 +30,6 @@ hs_err_pid*
 ## ignoring target file
 target/
 .classpath
-
 ### Maven ###
 pom.xml.tag
 pom.xml.releaseBackup
