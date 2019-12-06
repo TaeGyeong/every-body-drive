@@ -1,7 +1,6 @@
 package Servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -16,16 +15,17 @@ import DAO.CourseDAO;
 import VO.Course;
 
 /**
- * Servlet implementation class themeControllerServlet
+ * Servlet implementation class submitCourseServlet
  */
-@WebServlet("/themeControllerServlet")
-public class themeControllerServlet extends HttpServlet {
+@WebServlet("/submitCourseServlet")
+public class submitCourseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private CourseDAO courseDAO; 
+	private CourseDAO courseDAO;
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public themeControllerServlet() {
+    public submitCourseServlet() {
     	String jdbcURL = 
         		"jdbc:mysql://localhost:3306/bts?useTimezone=true&serverTimezone=UTC";
         String jdbcUsername = "root";
@@ -37,19 +37,7 @@ public class themeControllerServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html;charset=utf-8");
 		
-		String theme = request.getParameter("theme");
-		try {
-			List<Course> listCourse = courseDAO.getCourseByTheme(theme);
-			request.setAttribute("listCourse", listCourse);
-			request.setAttribute("theme", theme);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("courseListByTheme.jsp");
-			dispatcher.forward(request, response);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
 	}
 
 	/**
@@ -57,9 +45,26 @@ public class themeControllerServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html;charset=utf-8");
-		doGet(request, response);
+		
+		
+		String name = request.getParameter("name");
+		String location = request.getParameter("location");
+		String theme = request.getParameter("theme");
+		String distance = request.getParameter("distance");
+		String totaltime = request.getParameter("totaltime");
+		
+		try {
+			List<Course> listCourse = courseDAO.insertSubmit(name, location, theme, distance, totaltime);
+			request.setAttribute("listCourse", listCourse);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("submit.jsp"); // 자원을 넘기는 역할
+			dispatcher.forward(request, response);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		//doGet(request, response);
 	}
 
 }

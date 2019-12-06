@@ -95,6 +95,52 @@ public class CourseDAO {
     	return c;
     }
     
+    public List<Course> insertSubmit(String name, String location, String theme, String distance, String totaltime) throws SQLException {
+    	//List<Course> listCourse = new ArrayList<>();
+    	
+    	connect();
+    	
+    	PreparedStatement stmt = null;
+    	String sql1 = "insert into courseinfo(course_name, course_loc) values(?, ?)";
+    	stmt.setString(1, name);
+    	stmt.setString(2, location);
+    	stmt.executeUpdate(sql1);
+    	
+    	String sql2 = "insert into coursespec(spec_ID, Dist, Total_Time) values((SELECT course_id from courseinfo where course_name = ?) ,?,?)";
+    	stmt.setString(1, name);
+    	stmt.setString(2, distance);
+    	stmt.setString(3, totaltime);
+    	stmt.executeUpdate(sql2);
+    	
+    	
+//    	String sql = 
+//    			"CREATE TRIGGER insert_multiple AFTER INSERT on courseinfo " + 
+//    			"FOR EACH ROW " +
+//    					"BEGIN " +
+//    						"INSERT INTO coursespec(Spec_ID, Dist, Total_Time) VALUES((SELECT Course_ID FROM courseinfo WHERE Course_Name = ?), ?, ?); " +
+//    						"INSERT INTO coursetheme(CourseTheme_ID, Theme_ID) VALUES((SELECT Course_ID FROM courseinfo WHERE Course_Name = ?), ?); " +
+//    					"END;";
+//    	connect();
+//    	PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+//    	statement.setString(1, name);
+//    	statement.setString(2, distance);
+//    	statement.setString(3, totaltime);
+//    	statement.setString(4, name);
+//    	statement.setString(5, theme);
+//    	statement.executeUpdate();
+//    	
+//    	PreparedStatement statement2 = jdbcConnection.prepareStatement("INSERT INTO courseinfo(Course_Name, Course_Loc) VALUES(?, ?)");
+//    	statement2.setString(1, name);
+//    	statement2.setString(2,  location);
+//    	statement2.executeUpdate();
+//    	
+//    	statement.close();
+//    	statement2.close();
+//    	disconnect();    	
+    	
+    	return null;
+    }
+    
     public List<Course> returnSearch(String location, String theme, String search) throws SQLException {
     	List<Course> listCourse = new ArrayList<>();
     	String sql = null;
@@ -104,7 +150,7 @@ public class CourseDAO {
     	System.out.println(search);
     	connect();
     	
-    	if (location.equals("ì§€ì—­") && theme.equals("í…Œë§ˆ")) {
+    	if (location.equals("Áö¿ª") && theme.equals("Å×¸¶")) {
     		sql = 
 			"SELECT distinct course_id, course_name, course_loc, dist, total_time " + 
 			"FROM courseinfo, coursespec " + 
@@ -113,7 +159,7 @@ public class CourseDAO {
 			") AND spec_id=course_id AND course_name LIKE ?;";
     		statement = jdbcConnection.prepareStatement(sql);
     		statement.setString(1, "%" + search + "%");
-    	} else if (theme.equals("í…Œë§ˆ")) {
+    	} else if (theme.equals("Å×¸¶")) {
     		sql = 
 			"SELECT distinct course_id, course_name, course_loc, dist, total_time " + 
 	    			"FROM courseinfo, coursespec " + 
@@ -123,7 +169,7 @@ public class CourseDAO {
     		statement = jdbcConnection.prepareStatement(sql);
     		statement.setString(1, location);
     		statement.setString(2, "%" + search + "%");
-    	} else if (location.equals("ì§€ì—­")){
+    	} else if (location.equals("Áö¿ª")){
     		sql = 
 			"SELECT distinct course_id, course_name, course_loc, dist, total_time " + 
 			"FROM courseinfo, coursespec " + 

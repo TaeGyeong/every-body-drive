@@ -57,16 +57,6 @@
                                         <a class="dropdown-item" href="locationlist.jsp">Location</a>
                                     </div>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.jsp" id="navbarDropdown"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Blog
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="blog.jsp"> blog</a>
-                                        <a class="dropdown-item" href="single-blog.jsp">Single blog</a>
-                                    </div>
-                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="MapTest.jsp">Map Test</a>
                                 </li>
@@ -75,7 +65,6 @@
                                 </li> 
                             </ul>
                         </div>
-                        <a class="btn_1 d-none d-lg-block" href="#">Hot Line 052</a>
                     </nav>
                 </div>
             </div>
