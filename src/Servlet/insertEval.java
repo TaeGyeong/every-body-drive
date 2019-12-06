@@ -16,29 +16,32 @@ import VO.Course;
 import VO.Evaluation;
 
 /**
- * Servlet implementation class viewDetail
+ * Servlet implementation class insertEval
  */
-@WebServlet("/viewDetail")
-public class viewDetail extends HttpServlet {
+@WebServlet("/insertEval")
+public class insertEval extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private CourseDAO courseDAO;
+    private CourseDAO courseDAO;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public viewDetail() {
+    public insertEval() {
     	String jdbcURL = 
         		"jdbc:mysql://localhost:3306/bts?useTimezone=true&serverTimezone=UTC";
         String jdbcUsername = "root";
-        String jdbcPassword = "123456";
+        String jdbcPassword = "111111";
         courseDAO = new CourseDAO(jdbcURL, jdbcUsername, jdbcPassword);
     }
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("courseId");
+		String id = request.getParameter("id");
+		String star = request.getParameter("star");
+		String text = request.getParameter("comment");
+		
 		try {
+			courseDAO.insertEval(id, star, text);
 			Course c = courseDAO.detailCourse(id);
 			List<Double> list = courseDAO.getCourseAddr(id); 
 			List<Evaluation> list2 = courseDAO.getEvaluation(id);
@@ -48,9 +51,11 @@ public class viewDetail extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("viewDetail.jsp");
 			dispatcher.forward(request, response);
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

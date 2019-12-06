@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import VO.Course;
+import VO.Evaluation;
 
 
 public class CourseDAO {
@@ -44,6 +45,37 @@ public class CourseDAO {
     
     //////////////////////// SQL METHOD //////////////////////////
     
+    public void insertEval(String id, String star, String text) throws SQLException {
+    	String sql = "INSERT INTO courseeval (eval_course_id, star_eval, text_eval) "
+    			+ "VALUES (?, ?, ?);";
+    	connect();
+    	PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+    	statement.setString(1, id);
+    	statement.setString(2, star);
+    	statement.setString(3, text);
+    	statement.executeUpdate();
+    	statement.close();
+    	disconnect();
+    }
+    
+    public List<Evaluation> getEvaluation(String id) throws SQLException {
+    	List<Evaluation> list = new ArrayList<Evaluation>();
+    	String sql = "SELECT star_eval, text_eval FROM courseeval WHERE eval_course_id = ?";
+    	connect();
+    	PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+    	statement.setString(1, id);
+    	ResultSet resultSet = statement.executeQuery();
+    	while(resultSet.next()) {
+    		float star = resultSet.getFloat("star_eval");
+    		String text = resultSet.getString("text_eval");
+    		list.add(new Evaluation(star, text));
+    	}
+    	resultSet.close();
+    	statement.close();
+    	disconnect();
+    	return list;
+    }
+    
     public List<Double> getCourseAddr(String id) throws SQLException {
     	List<Double> list = new ArrayList<Double>();
     	String sql = "SELECT * FROM courseaddr WHERE addr_id = ?";
@@ -57,7 +89,9 @@ public class CourseDAO {
     		list.add(resultSet.getDouble("dest_lat"));
     		list.add(resultSet.getDouble("dest_long"));
     	}
-    	
+    	resultSet.close();
+    	statement.close();
+    	disconnect();
     	return list;
     }
     
@@ -86,7 +120,7 @@ public class CourseDAO {
     			c = new Course(courseId, courseName, location, dist, totalTime, evalCount, 0);
     		} else {
     			float heart = summation / evalCount;
-    			c = new Course(courseId, courseName, location, dist, totalTime, evalCount, 0);
+    			c = new Course(courseId, courseName, location, dist, totalTime, evalCount, heart);
     		}
     	}
     	resultSet.close();

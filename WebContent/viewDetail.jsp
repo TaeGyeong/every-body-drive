@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
@@ -90,7 +90,7 @@
 	         <div class="col-lg-12">
 	            <div class="breadcrumb_iner text-center">
 	               <div class="breadcrumb_iner_item">
-	                  <h2>�󼼺���</h2>
+	                  <h2>상세보기</h2>
 	               </div>
 	            </div>
 	         </div>
@@ -99,46 +99,124 @@
 	</section>
 	<!-- breadcrumb start-->
 
-	<div id="map1" style="width:250px;height:200px;"></div>
-	<br><hr><br>
-	<div id="map2" style="width:250px;height:200px;"></div>
-	
+	<!--================Blog Area =================-->
+	<section class="blog_area single-post-area padding_top">
+	   <div class="container">
+	      <div class="row">
+	         <div class="col-lg-8 posts-list">
+	            <div class="single-post">
+	               <div class="feature-img">
+	                  
+	                  <!-- 이미지 -->
+	                  <img class="img-fluid" src="img/course_id/${course.courseId }.jpg" alt="">
+	               </div>
+	               <div class="blog_details">
+	                  <h2>
+	                  	${course.courseName }
+	                  </h2>
+	                  <ul class="blog-info-link mt-3 mb-4">
+						<li><i class="fa fa-globe"></i><c:out value="${course.location }"></c:out></li>
+						<li><i class="ti-calendar"></i><c:out value="${course.totalTime}"></c:out>분</li>
+						<li><i class="ti-heart"></i><c:out value="${course.heart }"></c:out></li>
+						<li><i class="far fa-comment-dots"></i><c:out value="${course.evalCount }"></c:out></li>
+	                  </ul>
+	               </div>
+	            </div>
+	            <div class="navigation-top">
+	            </div>
+	            <div class="comment-form">
+	               <h4>평가하기</h4>
+	               <form action="insertEval" id="commentForm" method="post">
+	               	  <div class="row">
+	               	  	 <div class="col-12">	
+	               	  	 	<div class="switch-wrap d-flex justify-content-between">
+	               	  	 		<div class="input-group-icon">
+									<div class="form-select" id="default-select">
+										<div class="icon"><i class="fa fa-star" aria-hidden="true"></i></div>
+										<select name="star">
+											<option value="5" selected>5</option>
+											<option value="4">4</option>
+											<option value="3">3</option>
+											<option value="2">2</option>
+											<option value="1">1</option>
+										</select>
+									</div>
+								</div>
+							</div>
+	               	  	 </div>
+	               	  </div>
+	                  <div class="row">
+	                     <div class="col-12">
+	                        <div class="form-group">
+	                           <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
+	                              placeholder="평가를 입력해주세요."></textarea>
+	                        </div>
+	                     </div>
+	                  </div>
+	                  <div>
+	                  	<input type="hidden" name="id" value="${course.courseId }">
+	                  </div>
+	                  <div class="form-group mt-3">
+	                     <button type="submit" class="button button-contactForm btn_1">등록하기 <i
+	                           class="flaticon-right-arrow"></i>
+	                     </button>
+	                  </div>
+	               </form>
+	            </div>
+	            <div class="comments-area">
+	               <h4>${course.evalCount } Comments</h4>
+	               <div class="comment-list">
+	                  <c:forEach var="evaluation" items="${evaluation }">
+		                  <div class="single-comment justify-content-between d-flex">
+		                     <div class="user justify-content-between d-flex">
+		                        <!-- 평가부분 받아서 넣기. -->
+		                        <div class="desc">
+		                           <p class="comment">
+		                              ${evaluation.text }
+		                           </p>
+		                           <div class="d-flex justify-content-between">
+		                              <!-- 평가 별개수 표시. -->
+		                              ${evaluation.star }
+		                           </div>
+		                        </div>
+		                     </div>
+		                  </div>
+	                  </c:forEach>
+	               </div>
+	            </div>
+	         </div>
+	         <div class="col-lg-4">
+	            <div class="blog_right_sidebar">
+	               <aside class="single_sidebar_widget search_widget">
+	               	  <h4 class="widget_title">Arrive map</h4>
+	                  <form action="#">
+	                     <div class="form-group">
+	                     	<div id="map" style="width:400;height:400px;"></div>
+	                     </div>
+	                     <button type="button" onClick="window.open('https://map.kakao.com/link/to/${course.courseName},${address[2]},${address[3]}')" class="button rounded-0 primary-bg text-white w-100 btn_1">도착지 길찾기</button>
+	                  </form>
+	               </aside>
+	      </div>
+	   </div>
+	</section>
+	<!--================Blog Area end =================-->
 	
 	<!-- Kakao Talk Script -->
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=de3ffd7118fa83df7b5c421e1967d64d"></script>
 	<script>
-		var container1 = document.getElementById('map1');
-		var options1 = {
-			center: new kakao.maps.LatLng(${address[0]}, ${address[1]}),
-			level: 3
-		};
-		var map1 = new kakao.maps.Map(container1, options1);
-		var markerPosition = new kakao.maps.LatLng(${address[0]}, ${address[1]})
-		var marker1 = new kakao.maps.Marker({
-			position: markerPosition
-		})
-		marker1.setMap(map1)
-		///////////////////////////////////////////////////////////
-		var container2 = document.getElementById('map2');
+		var container2 = document.getElementById('map');
 		var options2 = {
 			center: new kakao.maps.LatLng(${address[2]}, ${address[3]}),
 			level: 3
 		};
-		var map2 = new kakao.maps.Map(container2, options2);
+		var map = new kakao.maps.Map(container2, options2);
 		var markerPosition = new kakao.maps.LatLng(${address[2]}, ${address[3]})
 		var marker2 = new kakao.maps.Marker({
 			position: markerPosition
 		})
-		marker2.setMap(map2)
-		
-		function openRoute() {
-			window.open("https://map.kakao.com/link/to/,37.402056,127.108212");
-		}
+		marker2.setMap(map)
 	</script>
 	<!-- Kakao Talk Script end. -->
-	<button onClick="https://map.kakao.com/link/to/īī���Ǳ����ǽ�,37.402056,127.108212">��ã��</button>
-	<h1><c:out value="${course }"></c:out></h1>
-	<h1><c:out value="${address }"></c:out></h1>
 	
 	
 <!-- jquery plugins here-->
