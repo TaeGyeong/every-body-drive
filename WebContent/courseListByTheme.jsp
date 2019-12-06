@@ -118,7 +118,7 @@
 								<input type="hidden" name="courseId" value="${course.courseId }">
 							</form>
 							<div class="blog_text">
-								<h2>
+								<h2 onclick="document.getElementById('detail${course.courseId }').submit();">
 									<c:out value="${course.courseName}"></c:out>
 								</h2>
 								<p>

@@ -57,7 +57,10 @@
                                 </li>
                                 <li>
                                     <a class="nav-link" href="submit.jsp">Submit</a>
-                                </li> 
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="test.jsp">submit test</a>
+                                </li>
                             </ul>
                         </div>
                     </nav>
