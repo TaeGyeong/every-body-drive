@@ -66,7 +66,7 @@
                                 </li> 
                             </ul>
                         </div>
-                        <a class="btn_1 d-none d-lg-block" href="#">Hot Line 052</a>
+                        <a class="btn_1 d-none d-lg-block" href="test.jsp">Hot Line 052</a>
                     </nav>
                 </div>
             </div>
