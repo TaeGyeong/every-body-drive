@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="css/slick.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    
 </head>
 <body>
     <!--::header part start::-->
@@ -103,6 +105,7 @@
 
     <!-- banner part start-->
     <section class="search_your_country">
+    
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-lg-12">
@@ -192,14 +195,6 @@
         <img src="img/animate_icon/Shape-2.png" alt="" class="feature_icon_2">
     </section>
     <!-- banner part start-->
-
-
-
-
-
-
-
-
 
     <!-- feature_part start-->
     <section class="feature_part padding_top">
