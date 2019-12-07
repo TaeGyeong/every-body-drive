@@ -42,15 +42,13 @@
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="menu_icon"><i class="fas fa-bars"></i></span>
                         </button>
-
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
                                     <a class="nav-link" href="index.jsp">Home</a>
                                 </li>
-                           
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="packages.jsp" id="navbarDropdown"
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Drive Course
                                     </a>
@@ -59,25 +57,14 @@
                                         <a class="dropdown-item" href="locationlist.jsp">Location</a>
                                     </div>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.jsp" id="navbarDropdown"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Blog
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="blog.jsp"> blog</a>
-                                        <a class="dropdown-item" href="single-blog.jsp">Single blog</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="MapTest.jsp">Map Test</a>
-                                </li>
                                 <li>
                                     <a class="nav-link" href="submit.jsp">Submit</a>
-                                </li> 
+                                </li>
+                                <!-- <li>
+                                    <a class="nav-link" href="test.jsp">submit test</a>
+                                </li> -->
                             </ul>
                         </div>
-                        <a class="btn_1 d-none d-lg-block" href="#">Hot Line 052</a>
                     </nav>
                 </div>
             </div>
@@ -170,7 +157,7 @@
                         <img src="img/icon/money_bag.svg" alt="#">
                         <h4>고객 맞춤형 검색의 편리함</h4>
                         <p>나만의 드라이브 코스를 알고 싶을 때, 테마별/지역별로 검색해보세요 ! 즉시 드라이브 코스를 추천해드립니다. </p>
-                        <a href="#" class="read_btn">read more</a>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
@@ -178,7 +165,7 @@
                         <img src="img/icon/money_bag.svg" alt="#">
                         <h4>테마별/지역별 드라이브 코스 추천</h4>
                         <p>선호하는 테마별 드라이브 코스를 지역별로 검색해보세요! 단순한 드라이브가 아닌 새로운 드라이브 경험이 될거에요!</p>
-                        <a href="#" class="read_btn">read more</a>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
@@ -186,7 +173,7 @@
                         <img src="img/icon/money_bag.svg" alt="#">
                         <h4>드라이브 코스 평가와 공유의 가치</h4>
                         <p>사용자 간 '나만의 드라이브 코스'를 공유해보세요! 그리고 다양한 코스를 평가해보세요! </p>
-                        <a href="#" class="read_btn">read more</a>
+                        
                     </div>
                 </div>
             </div>
@@ -253,7 +240,7 @@
                     <div class="section_tittle text-center">
                         <img src="img/section_tittle_img.png" alt="">
                         <h2>Most Popular <span>Drive Course</span> </h2>
-                        <p>맞춤형 드라이브 코스로 새로운 여정을 떠나보세요! 당신의 삶에 새로운 가치가 더해질거에요! </p>
+                        <p>맞춤형 드라이브 코스로 새로운 여정을 떠나보세요! <br> 당신의 삶에 새로운 가치가 더해질거에요! </p>
                     </div>
                 </div>
             </div>
@@ -263,21 +250,21 @@
                         <img src="img/icon/place_icon_1.png" alt="">
                         <h4>엄태경</h4>
                         <p>Ajou University, Developer</p>
-                        <a href="#" class="btn1">More Info</a>
+
                     </div>
                 </div><div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/icon/place_icon_2.png" alt="">
                         <h4>정주현</h4>
                         <p>Ajou University, Developer</p>
-                        <a href="#" class="btn1">More Info</a>
+
                     </div>
                 </div><div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
                         <img src="img/icon/place_icon_3.png" alt="">
                         <h4>박창현</h4>
                         <p>Ajou University, Developer</p>
-                        <a href="#" class="btn1">More Info</a>
+
                     </div>
                 </div>
             </div>
@@ -309,7 +296,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 </div>
             </div>
         </div>
-        <img src="img/overlay_2.png" alt="#" class="footer_overlay">
+<!--         <img src="img/overlay_2.png" alt="#" class="footer_overlay"> -->
     </footer>
     <!--::footer_part end::-->
 

@@ -41,15 +41,13 @@
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="menu_icon"><i class="fas fa-bars"></i></span>
                         </button>
-
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
                                     <a class="nav-link" href="index.jsp">Home</a>
                                 </li>
-                           
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="packages.jsp" id="navbarDropdown"
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Drive Course
                                     </a>
@@ -58,19 +56,14 @@
                                         <a class="dropdown-item" href="locationlist.jsp">Location</a>
                                     </div>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.jsp" id="navbarDropdown"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Blog
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="blog.jsp"> blog</a>
-                                        <a class="dropdown-item" href="single-blog.jsp">Single blog</a>
-                                    </div>
+                                <li>
+                                    <a class="nav-link" href="submit.jsp">Submit</a>
                                 </li>
+                                <!-- <li>
+                                    <a class="nav-link" href="test.jsp">submit test</a>
+                                </li> -->
                             </ul>
                         </div>
-                        <a class="btn_1 d-none d-lg-block" href="#">Hot Line 052</a>
                     </nav>
                 </div>
             </div>

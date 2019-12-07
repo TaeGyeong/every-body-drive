@@ -42,15 +42,13 @@
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="menu_icon"><i class="fas fa-bars"></i></span>
                         </button>
-
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
                                     <a class="nav-link" href="index.jsp">Home</a>
                                 </li>
-                           
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="packages.jsp" id="navbarDropdown"
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Drive Course
                                     </a>
@@ -59,19 +57,14 @@
                                         <a class="dropdown-item" href="locationlist.jsp">Location</a>
                                     </div>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.jsp" id="navbarDropdown"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Blog
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="blog.jsp"> blog</a>
-                                        <a class="dropdown-item" href="single-blog.jsp">Single blog</a>
-                                    </div>
+                                <li>
+                                    <a class="nav-link" href="submit.jsp">Submit</a>
                                 </li>
+                                <!-- <li>
+                                    <a class="nav-link" href="test.jsp">submit test</a>
+                                </li> -->
                             </ul>
                         </div>
-                        <a class="btn_1 d-none d-lg-block" href="#">Hot Line 052</a>
                     </nav>
                 </div>
             </div>
@@ -302,166 +295,9 @@
     </section>
     <!-- popular place part end-->
 
-    <!-- blog post part start-->
-    <section class="blog_part padding_top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="section_tittle">
-                        <img src="img/section_tittle_img.png" alt="">
-                        <h2>our blog</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit 
-                        sed  do eiusmod tempor incididunt ut</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_blog_part">
-                        <img src="img/blog/blog_1.png" alt="">
-                        <div class="blog_text">
-                            <h2>Luxerious Car Rental</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna 
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                            <ul>
-                                <li>
-                                    <i class="ti-calendar"></i>
-                                    <p>13th Dec</p>
-                                </li>
-                                <li>
-                                    <i class="ti-heart"></i>
-                                    <p>15</p>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment-dots"></i>
-                                    <p>10</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_blog_part">
-                        <img src="img/blog/blog_2.png" alt="">
-                        <div class="blog_text">
-                            <h2>Luxerious Car Rental</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna 
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                            <ul>
-                                <li>
-                                    <i class="ti-calendar"></i>
-                                    <p>13th Dec</p>
-                                </li>
-                                <li>
-                                    <i class="ti-heart"></i>
-                                    <p>15</p>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment-dots"></i>
-                                    <p>10</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_blog_part">
-                        <img src="img/blog/blog_3.png" alt="">
-                        <div class="blog_text">
-                            <h2>Luxerious Car Rental</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna 
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                            <ul>
-                                <li>
-                                    <i class="ti-calendar"></i>
-                                    <p>13th Dec</p>
-                                </li>
-                                <li>
-                                    <i class="ti-heart"></i>
-                                    <p>15</p>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment-dots"></i>
-                                    <p>10</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <img src="img/overlay_1.png" alt="#" class="blog_img">
-    </section>
-    <!-- blog post part end-->
-
 	<!--::footer_part start::-->
     <footer class="footer_part">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-lg-3">
-                    <div class="single_footer_part">
-                        <h4>About Agency</h4>
-                        <p>The world has become so fast paced that people don��t want 
-                        to stand by reading a page of information, they would much 
-                        rather look at a presentation and understand the message. 
-                        It has come to a point where images</p>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="single_footer_part">
-                        <h4>Navigation Links</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Portfolio</a></li>
-                            <li><a href="#">team</a></li>
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="single_footer_part">
-                        <h4>Newsletter</h4>
-                        <p>Heaven fruitful doesn't over lesser in days. Appear creeping seasons deve behold bearing days
-                            open
-                        </p>
-                        <div id="mc_embed_signup">
-                            <form target="_blank"
-                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                                method="get" class="subscribe_form relative mail_part">
-                                <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
-                                    class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
-                                    onblur="this.placeholder = ' Email Address '">
-                                <button type="submit" name="submit" id="newsletter-submit"
-                                    class="email_icon newsletter-submit button-contactForm"><i
-                                        class="far fa-paper-plane"></i></button>
-                                <div class="mt-10 info"></div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                    <div class="single_footer_part">
-                        <h4>Instafeed</h4>
-                        <div class="footer_img">
-                            <a href="#"><img src="img/footer_img/footer_1.png" alt=""></a>
-                            <a href="#"><img src="img/footer_img/footer_2.png" alt=""></a>
-                            <a href="#"><img src="img/footer_img/footer_3.png" alt=""></a>
-                            <a href="#"><img src="img/footer_img/footer_4.png" alt=""></a>
-                            <a href="#"><img src="img/footer_img/footer_5.png" alt=""></a>
-                            <a href="#"><img src="img/footer_img/footer_6.png" alt=""></a>
-                            <a href="#"><img src="img/footer_img/footer_7.png" alt=""></a>
-                            <a href="#"><img src="img/footer_img/footer_8.png" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="container">            
             <hr>
             <div class="row">
                 <div class="col-lg-8">
@@ -483,7 +319,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 </div>
             </div>
         </div>
-        <img src="img/overlay_2.png" alt="#" class="footer_overlay">
+<!--         <img src="img/overlay_2.png" alt="#" class="footer_overlay"> -->
     </footer>
     <!--::footer_part end::-->
 
