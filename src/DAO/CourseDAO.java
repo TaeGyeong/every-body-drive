@@ -140,11 +140,17 @@ public class CourseDAO {
     	stmt.setString(2, location);
     	stmt.executeUpdate(sql1);
     	
-    	String sql2 = "insert into coursespec(spec_ID, Dist, Total_Time) values((SELECT course_id from courseinfo where course_name = ?) ,?,?)";
+    	String sql2 = "select course_id from courseinfo where course_name = ?";
+    	stmt.setString(1, name);
+    	stmt.executeUpdate(sql2);
+    	
+    	System.out.println(sql2);
+    	
+/*    	String sql3 = "insert into coursespec(spec_ID, Dist, Total_Time) values((SELECT course_id from courseinfo where course_name = ?) ,?,?)";
     	stmt.setString(1, name);
     	stmt.setString(2, distance);
     	stmt.setString(3, totaltime);
-    	stmt.executeUpdate(sql2);
+    	stmt.executeUpdate(sql2);*/
     	
     	
 //    	String sql = 
