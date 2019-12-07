@@ -80,7 +80,7 @@
                     <div class="banner_text">
                         <div class="banner_text_iner">
                             <h5>Best way to Drive</h5>
-                            <h1>Drive For Everybody</h1>
+                            <h1>Drive Course <br> For Everyone</h1>
                             <h2 style="color:white">모두의 드라이브</h2>
                         </div>
                     </div>
