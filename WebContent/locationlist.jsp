@@ -59,9 +59,6 @@
                                         <a class="dropdown-item" href="locationlist.jsp">Location</a>
                                     </div>
                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="MapTest.jsp">Map Test</a>
-                                </li>
                                 <li>
                                     <a class="nav-link" href="submit.jsp">Submit</a>
                                 </li> 
