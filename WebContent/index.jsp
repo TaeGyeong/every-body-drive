@@ -301,7 +301,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 </div>
             </div>
         </div>
-        <img src="img/overlay_2.png" alt="#" class="footer_overlay">
+<!--         <img src="img/overlay_2.png" alt="#" class="footer_overlay"> -->
     </footer>
     <!--::footer_part end::-->
 

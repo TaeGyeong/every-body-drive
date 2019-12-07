@@ -243,7 +243,7 @@
 				</div>
 			</div>
 		</div>
-		<img src="img/overlay_2.png" alt="#" class="footer_overlay">
+<!-- 		<img src="img/overlay_2.png" alt="#" class="footer_overlay"> -->
 	</footer>
 
 
