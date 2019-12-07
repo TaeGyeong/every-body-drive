@@ -46,7 +46,7 @@
                                     <a class="nav-link" href="index.jsp">Home</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="packages.jsp" id="navbarDropdown"
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Drive Course
                                     </a>

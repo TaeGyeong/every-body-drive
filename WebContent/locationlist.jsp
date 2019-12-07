@@ -42,15 +42,13 @@
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="menu_icon"><i class="fas fa-bars"></i></span>
                         </button>
-
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
                                     <a class="nav-link" href="index.jsp">Home</a>
                                 </li>
-                           
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="packages.jsp" id="navbarDropdown"
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Drive Course
                                     </a>
@@ -61,7 +59,10 @@
                                 </li>
                                 <li>
                                     <a class="nav-link" href="submit.jsp">Submit</a>
-                                </li> 
+                                </li>
+                                <!-- <li>
+                                    <a class="nav-link" href="test.jsp">submit test</a>
+                                </li> -->
                             </ul>
                         </div>
                     </nav>
