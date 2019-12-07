@@ -95,7 +95,7 @@
                 <div class="col-lg-5">
                     <div class="section_tittle text-center">
                         <img src="img/section_tittle_img.png" alt="">
-                        <h2>테마<span>목록</span> </h2>
+                        <h2>지역별 테마<span>목록</span> </h2>
                     </div>
                 </div>
             </div>	
