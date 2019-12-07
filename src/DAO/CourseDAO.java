@@ -144,7 +144,7 @@ public class CourseDAO {
     		if (evalCount == 0) {
     			c = new Course(courseId, courseName, location, dist, totalTime, evalCount, 0);
     		} else {
-    			float heart = summation / evalCount;
+    			float heart = Math.round((summation * 10) / evalCount) / 10;
     			c = new Course(courseId, courseName, location, dist, totalTime, evalCount, heart);
     		}
     	}
@@ -296,7 +296,7 @@ public class CourseDAO {
     		if (evalCount == 0) {
     			listCourse.add(new Course(courseId, courseName, location, dist, totalTime, evalCount, evalCount));
     		} else {
-    			float heart = summation / evalCount;
+    			float heart = Math.round((summation * 10) / evalCount) / 10;
     			listCourse.add(new Course(courseId, courseName, location, dist, totalTime, evalCount, heart));
     		}
     		
@@ -335,7 +335,7 @@ public class CourseDAO {
     		if (evalCount == 0) {
     			listCourse.add(new Course(courseId, courseName, location, dist, totalTime, evalCount, evalCount));
     		} else {
-    			float heart = summation / evalCount;
+    			float heart = Math.round((summation * 10) / evalCount) / 10;
     			listCourse.add(new Course(courseId, courseName, location, dist, totalTime, evalCount, heart));
     		}
     		

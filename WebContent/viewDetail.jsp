@@ -167,13 +167,16 @@
 									<div class="user justify-content-between d-flex">
 										<!-- 평가부분 받아서 넣기. -->
 										<div class="desc">
+											<!-- 평가 별개수 표시. -->
+											<div class="icon">
+												<c:forEach var="i" begin="1" end="${evaluation.star }">
+													<i class="fa fa-star" aria-hidden="true"></i>
+												</c:forEach>
+											</div>	
 											<p class="comment">
 												${evaluation.text }
 											</p>
-											<div class="d-flex justify-content-between">
-												<!-- 평가 별개수 표시. -->
-												${evaluation.star }
-											</div>
+											<hr>
 										</div>
 									</div>
 								</div>
