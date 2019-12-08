@@ -41,15 +41,13 @@
                             aria-expanded="false" aria-label="Toggle navigation">
                             <span class="menu_icon"><i class="fas fa-bars"></i></span>
                         </button>
-
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
                                     <a class="nav-link" href="index.jsp">Home</a>
                                 </li>
-                           
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="packages.jsp" id="navbarDropdown"
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Drive Course
                                     </a>
@@ -58,19 +56,14 @@
                                         <a class="dropdown-item" href="locationlist.jsp">Location</a>
                                     </div>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.jsp" id="navbarDropdown"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Blog
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="blog.jsp"> blog</a>
-                                        <a class="dropdown-item" href="single-blog.jsp">Single blog</a>
-                                    </div>
+                                <li>
+                                    <a class="nav-link" href="submit.jsp">Submit</a>
                                 </li>
+                                <!-- <li>
+                                    <a class="nav-link" href="test.jsp">submit test</a>
+                                </li> -->
                             </ul>
                         </div>
-                        <a class="btn_1 d-none d-lg-block" href="#">Hot Line 052</a>
                     </nav>
                 </div>
             </div>
@@ -86,7 +79,7 @@
                     <div class="banner_text">
                         <div class="banner_text_iner">
                             <h5>Best way to Drive</h5>
-                            <h1>Drive For Everybody</h1>
+                            <h1>Drive Course <br> For Everyone</h1>
                             <h2 style="color:white">모두의 드라이브</h2>
                         </div>
                     </div>
@@ -166,7 +159,11 @@
 	            <c:forEach var="course" items="${listCourse }">
 		            <div class="col-lg-4 col-sm-4">
 	                    <div class="single_blog_part">
-	                        <img src="" alt="">
+	                        <form action="viewDetail" id="detail${course.courseId }" method="post">
+								<img src="img/course_id/${course.courseId}.jpg" height=250,
+									width=300 alt="" style="cursor:pointer" onclick="document.getElementById('detail${course.courseId }').submit();">
+								<input type="hidden" name="courseId" value="${course.courseId }">
+							</form>
 	                        <div class="blog_text">
 	                            <h2><c:out value="${course.courseName}"></c:out></h2>
 	                            <p><c:out value="${course.location}"></c:out></p>
@@ -218,7 +215,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 </div>
             </div>
         </div>
-        <img src="img/overlay_2.png" alt="#" class="footer_overlay">
+<!--         <img src="img/overlay_2.png" alt="#" class="footer_overlay"> -->
     </footer>
     <!--::footer_part end::-->
 

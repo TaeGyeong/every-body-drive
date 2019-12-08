@@ -45,6 +45,31 @@ public class CourseDAO {
     
     //////////////////////// SQL METHOD //////////////////////////
     
+    public void insertLatLng(int Courseid, String slat, String slng, String elat, String elng) throws SQLException {
+    	
+    	
+    	
+    	String sql = "INSERT INTO courseaddr(Addr_ID, depart_lat, depart_long, dest_lat, dest_long)"
+    			+ "VALUES(?, ?, ?, ?, ?);";
+    	connect();
+    	PreparedStatement statement = jdbcConnection.prepareStatement(sql);
+    	
+    	double one = (double) (Math.round(Double.parseDouble(slat)*10000000))/10000000;
+    	double two = (double) (Math.round(Double.parseDouble(slng)*10000000))/10000000;
+    	double three = (double) (Math.round(Double.parseDouble(elat)*10000000))/10000000;
+    	double four = (double) (Math.round(Double.parseDouble(elng)*10000000))/10000000;
+    	
+    	statement.setInt(1, Courseid);
+    	statement.setString(2, String.format("%f", one));
+    	statement.setString(3, String.format("%f", two));
+    	statement.setString(4, String.format("%f", three));
+    	statement.setString(5, String.format("%f", four));
+    	statement.executeUpdate();
+    	statement.close();
+    	disconnect();
+    	
+    }
+    
     public void insertEval(String id, String star, String text) throws SQLException {
     	String sql = "INSERT INTO courseeval (eval_course_id, star_eval, text_eval) "
     			+ "VALUES (?, ?, ?);";
@@ -119,7 +144,7 @@ public class CourseDAO {
     		if (evalCount == 0) {
     			c = new Course(courseId, courseName, location, dist, totalTime, evalCount, 0);
     		} else {
-    			float heart = summation / evalCount;
+    			float heart = Math.round((summation * 10) / evalCount) / 10;
     			c = new Course(courseId, courseName, location, dist, totalTime, evalCount, heart);
     		}
     	}
@@ -129,50 +154,52 @@ public class CourseDAO {
     	return c;
     }
     
-    public List<Course> insertSubmit(String name, String location, String theme, String distance, String totaltime) throws SQLException {
-    	//List<Course> listCourse = new ArrayList<>();
-    	
+    public int insertSubmit(String name, String location, String theme, String distance, String totaltime) throws SQLException {
+    	int courseId = 0;
     	connect();
+    	jdbcConnection.setAutoCommit(false); // ì˜¤í† ì»¤ë°‹ false ì„¤ì •.
+    	PreparedStatement statement = null;
+    	ResultSet resultSet = null;
+    	try {
+    		String sql = "INSERT INTO courseinfo(course_name, course_loc) VALUES (?, ?);";
+    		statement = jdbcConnection.prepareStatement(sql);
+    		statement.setString(1, name);
+    		statement.setString(2, location);
+    		statement.executeUpdate();
+    		
+    		sql = "SELECT course_id FROM courseinfo WHERE course_name = ? AND course_loc = ?;";
+    		statement = jdbcConnection.prepareStatement(sql);
+    		statement.setString(1, name);
+    		statement.setString(2, location);
+    		resultSet = statement.executeQuery();
+    		while (resultSet.next()) {
+    			courseId = resultSet.getInt("course_id");
+    		}
+    		sql = "INSERT INTO coursespec(spec_ID, Dist, Total_Time) VALUES (?, ?, ?);";
+    		statement = jdbcConnection.prepareStatement(sql);
+    		statement.setString(1, String.valueOf(courseId));
+    		statement.setString(2, distance);
+    		statement.setString(3, totaltime);
+    		statement.executeUpdate();
+    		
+    		sql = "INSERT INTO coursetheme(CourseTheme_ID, Theme_ID) VALUES (?,?);";
+    		statement = jdbcConnection.prepareStatement(sql);
+    		statement.setString(1, String.valueOf(courseId));
+    		statement.setString(2, theme);
+    		statement.executeUpdate();
+    		
+    		jdbcConnection.commit();
+    		resultSet.close();
+    		statement.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+			jdbcConnection.rollback();
+		} finally {
+			jdbcConnection.setAutoCommit(true);
+			disconnect();
+		}
     	
-    	PreparedStatement stmt = null;
-    	String sql1 = "insert into courseinfo(course_name, course_loc) values(?, ?)";
-    	stmt.setString(1, name);
-    	stmt.setString(2, location);
-    	stmt.executeUpdate(sql1);
-    	
-    	String sql2 = "insert into coursespec(spec_ID, Dist, Total_Time) values((SELECT course_id from courseinfo where course_name = ?) ,?,?)";
-    	stmt.setString(1, name);
-    	stmt.setString(2, distance);
-    	stmt.setString(3, totaltime);
-    	stmt.executeUpdate(sql2);
-    	
-    	
-//    	String sql = 
-//    			"CREATE TRIGGER insert_multiple AFTER INSERT on courseinfo " + 
-//    			"FOR EACH ROW " +
-//    					"BEGIN " +
-//    						"INSERT INTO coursespec(Spec_ID, Dist, Total_Time) VALUES((SELECT Course_ID FROM courseinfo WHERE Course_Name = ?), ?, ?); " +
-//    						"INSERT INTO coursetheme(CourseTheme_ID, Theme_ID) VALUES((SELECT Course_ID FROM courseinfo WHERE Course_Name = ?), ?); " +
-//    					"END;";
-//    	connect();
-//    	PreparedStatement statement = jdbcConnection.prepareStatement(sql);
-//    	statement.setString(1, name);
-//    	statement.setString(2, distance);
-//    	statement.setString(3, totaltime);
-//    	statement.setString(4, name);
-//    	statement.setString(5, theme);
-//    	statement.executeUpdate();
-//    	
-//    	PreparedStatement statement2 = jdbcConnection.prepareStatement("INSERT INTO courseinfo(Course_Name, Course_Loc) VALUES(?, ?)");
-//    	statement2.setString(1, name);
-//    	statement2.setString(2,  location);
-//    	statement2.executeUpdate();
-//    	
-//    	statement.close();
-//    	statement2.close();
-//    	disconnect();    	
-    	
-    	return null;
+    	return courseId;
     }
     
     public List<Course> returnSearch(String location, String theme, String search) throws SQLException {
@@ -184,7 +211,7 @@ public class CourseDAO {
     	System.out.println(search);
     	connect();
     	
-    	if (location.equals("Áö¿ª") && theme.equals("Å×¸¶")) {
+    	if (location.equals("ï¿½ï¿½ï¿½ï¿½") && theme.equals("ï¿½×¸ï¿½")) {
     		sql = 
 			"SELECT distinct course_id, course_name, course_loc, dist, total_time " + 
 			"FROM courseinfo, coursespec " + 
@@ -193,7 +220,7 @@ public class CourseDAO {
 			") AND spec_id=course_id AND course_name LIKE ?;";
     		statement = jdbcConnection.prepareStatement(sql);
     		statement.setString(1, "%" + search + "%");
-    	} else if (theme.equals("Å×¸¶")) {
+    	} else if (theme.equals("ï¿½×¸ï¿½")) {
     		sql = 
 			"SELECT distinct course_id, course_name, course_loc, dist, total_time " + 
 	    			"FROM courseinfo, coursespec " + 
@@ -203,7 +230,7 @@ public class CourseDAO {
     		statement = jdbcConnection.prepareStatement(sql);
     		statement.setString(1, location);
     		statement.setString(2, "%" + search + "%");
-    	} else if (location.equals("Áö¿ª")){
+    	} else if (location.equals("ï¿½ï¿½ï¿½ï¿½")){
     		sql = 
 			"SELECT distinct course_id, course_name, course_loc, dist, total_time " + 
 			"FROM courseinfo, coursespec " + 
@@ -269,7 +296,7 @@ public class CourseDAO {
     		if (evalCount == 0) {
     			listCourse.add(new Course(courseId, courseName, location, dist, totalTime, evalCount, evalCount));
     		} else {
-    			float heart = summation / evalCount;
+    			float heart = Math.round((summation * 10) / evalCount) / 10;
     			listCourse.add(new Course(courseId, courseName, location, dist, totalTime, evalCount, heart));
     		}
     		
@@ -308,7 +335,7 @@ public class CourseDAO {
     		if (evalCount == 0) {
     			listCourse.add(new Course(courseId, courseName, location, dist, totalTime, evalCount, evalCount));
     		} else {
-    			float heart = summation / evalCount;
+    			float heart = Math.round((summation * 10) / evalCount) / 10;
     			listCourse.add(new Course(courseId, courseName, location, dist, totalTime, evalCount, heart));
     		}
     		
