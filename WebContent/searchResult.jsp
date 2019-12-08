@@ -79,7 +79,7 @@
                     <div class="banner_text">
                         <div class="banner_text_iner">
                             <h5>Best way to Drive</h5>
-                            <h1>Drive For Everybody</h1>
+                            <h1>Drive Course <br> For Everyone</h1>
                             <h2 style="color:white">모두의 드라이브</h2>
                         </div>
                     </div>
@@ -159,7 +159,11 @@
 	            <c:forEach var="course" items="${listCourse }">
 		            <div class="col-lg-4 col-sm-4">
 	                    <div class="single_blog_part">
-	                        <img src="" alt="">
+	                        <form action="viewDetail" id="detail${course.courseId }" method="post">
+								<img src="img/course_id/${course.courseId}.jpg" height=250,
+									width=300 alt="" style="cursor:pointer" onclick="document.getElementById('detail${course.courseId }').submit();">
+								<input type="hidden" name="courseId" value="${course.courseId }">
+							</form>
 	                        <div class="blog_text">
 	                            <h2><c:out value="${course.courseName}"></c:out></h2>
 	                            <p><c:out value="${course.location}"></c:out></p>
@@ -211,7 +215,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 </div>
             </div>
         </div>
-        <img src="img/overlay_2.png" alt="#" class="footer_overlay">
+<!--         <img src="img/overlay_2.png" alt="#" class="footer_overlay"> -->
     </footer>
     <!--::footer_part end::-->
 

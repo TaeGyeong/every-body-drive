@@ -94,7 +94,11 @@
 				novalidate="novalidate">
 				<div class="row">
 					<div class="col-12">
-						<h2 class="contact-title">나만의 드라이브 코스 등록하기</h2>
+					    <img src="img/section_tittle_img.png" alt="#">
+					    <br>
+					    <br>
+					    <br>
+						<h2 class="contact-title">나만의 드라이브 코스 등록하기</h2>				    
 					</div>
 					<div class="col-lg-12">
 						<div class="row">
