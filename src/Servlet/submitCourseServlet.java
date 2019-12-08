@@ -13,19 +13,19 @@ import javax.servlet.http.HttpServletResponse;
 
 import DAO.CourseDAO;
 import VO.Course;
-import VO.Evaluation;
 
 /**
- * Servlet implementation class viewDetail
+ * Servlet implementation class submitCourseServlet
  */
-@WebServlet("/viewDetail")
-public class viewDetail extends HttpServlet {
+@WebServlet("/submitCourseServlet")
+public class submitCourseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private CourseDAO courseDAO;
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public viewDetail() {
+    public submitCourseServlet() {
     	String jdbcURL = 
         		"jdbc:mysql://localhost:3306/bts?useTimezone=true&serverTimezone=UTC";
         String jdbcUsername = "root";
@@ -37,27 +37,34 @@ public class viewDetail extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("courseId");
-		try {
-			Course c = courseDAO.detailCourse(id);
-			List<Double> list = courseDAO.getCourseAddr(id); 
-			List<Evaluation> list2 = courseDAO.getEvaluation(id);
-			request.setAttribute("course", c);
-			request.setAttribute("address", list);
-			request.setAttribute("evaluation", list2);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("viewDetail.jsp");
-			dispatcher.forward(request, response);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		
 	}
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html;charset=utf-8");
-		doGet(request, response);
+		// TODO Auto-generated method stub
+		
+		
+		String name = request.getParameter("name");
+		String location = request.getParameter("location");
+		String theme = request.getParameter("theme");
+		String distance = request.getParameter("distance");
+		String totaltime = request.getParameter("totaltime");
+		
+		try {
+			List<Course> listCourse = courseDAO.insertSubmit(name, location, theme, distance, totaltime);
+			request.setAttribute("listCourse", listCourse);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("submit.jsp"); // 자원을 넘기는 역할
+			dispatcher.forward(request, response);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		//doGet(request, response);
 	}
 
 }
