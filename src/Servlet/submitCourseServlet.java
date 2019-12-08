@@ -30,7 +30,7 @@ public class submitCourseServlet extends HttpServlet {
     	String jdbcURL = 
         		"jdbc:mysql://localhost:3306/bts?useTimezone=true&serverTimezone=UTC";
         String jdbcUsername = "root";
-        String jdbcPassword = "123456";
+        String jdbcPassword = "111111";
         courseDAO = new CourseDAO(jdbcURL, jdbcUsername, jdbcPassword);
     }
 
@@ -69,7 +69,6 @@ public class submitCourseServlet extends HttpServlet {
 			request.setAttribute("address", list);
 			request.setAttribute("evaluation", list2);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("viewDetail.jsp");
-			dispatcher.forward(request, response);
 			dispatcher.forward(request, response);
 		} catch (SQLException e) {
 			e.printStackTrace();
